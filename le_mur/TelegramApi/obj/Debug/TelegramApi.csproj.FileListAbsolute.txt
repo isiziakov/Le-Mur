@@ -7,3 +7,12 @@ C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.Co
 C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.CopyComplete
 C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.pdb
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\bin\Debug\TelegramApi.dll
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\bin\Debug\TelegramApi.pdb
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\bin\Debug\TeleSharp.TL.dll
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\bin\Debug\TLSharp.Core.dll
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.AssemblyReference.cache
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.CoreCompileInputs.cache
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.CopyComplete
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.dll
+D:\университет\lemut\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.pdb

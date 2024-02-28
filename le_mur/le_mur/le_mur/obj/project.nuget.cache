@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "+4HHFvlHRpQhlZN80TvUkp+kZRxfJGjR/j4sMdRVpAQRF9g1tbMWVodTWYQshf9Mx9V8tYicDPLaOTb7RNScZw==",
+  "dgSpecHash": "Pc+RThVpIUs/2vAvFQ8Nck/jxdzUrDUIpYqBmJaGSRvhVYRjN4h59KoK2RKIhodNaKvt8+N0Ncfc1juyT3z0KA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj",
+  "projectFilePath": "D:\\университет\\lemut\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ivans\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\ivans\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\ivans\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\ivans\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\dasha\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
   "logs": []
 }
