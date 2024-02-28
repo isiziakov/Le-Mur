@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "eaoCRExMiPpgkDPySjUgdM73EZ76bYl8Pr9IwCUccMcgCb/brUrPUh8KPQshs0BCszU0zWjZUBrQgIiqshggmQ==",
+  "success": true,
+  "projectFilePath": "D:\\университет\\lemut\\Le-Mur\\le_mur\\le_mur\\le_mur.iOS\\le_mur.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dasha\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
