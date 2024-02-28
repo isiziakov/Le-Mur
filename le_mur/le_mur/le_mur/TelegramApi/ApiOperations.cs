@@ -27,7 +27,7 @@ namespace le_mur.TelegramApi
         {
             if (!checkAuth())
             {
-                return await client.SendCodeRequestAsync("+79632153559");
+                return await client.SendCodeRequestAsync(phone);
             }
             else
             {
