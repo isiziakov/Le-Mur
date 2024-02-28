@@ -52,7 +52,7 @@ namespace le_mur.TelegramApi
         {
             var dialogs = (TLDialogs)await client.GetUserDialogsAsync();
             return dialogs.Chats.Where(s => s.GetType().FullName.ToString() == "TeleSharp.TL.TLChannel")
-                .Select(s => (s as TeleSharp.TL.TLChannel).Title).ToArray()
+                .Select(s => (s as TeleSharp.TL.TLChannel).Title).ToArray();
         }
 
         static bool checkAuth()
