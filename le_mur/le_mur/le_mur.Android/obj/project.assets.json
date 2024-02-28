@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "MonoAndroid,Version=v13.0": {
+    "MonoAndroid,Version=v11.0": {
       "System.Numerics.Vectors/4.5.0": {
         "type": "package",
         "compile": {
@@ -1552,6 +1552,15 @@
         },
         "runtime": {
           "bin/placeholder/le_mur.dll": {}
+        }
+      },
+      "TelegramApi/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/TelegramApi.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TelegramApi.dll": {}
         }
       }
     }
@@ -3162,10 +3171,16 @@
       "type": "project",
       "path": "../le_mur/le_mur.csproj",
       "msbuildProject": "../le_mur/le_mur.csproj"
+    },
+    "TelegramApi/1.0.0": {
+      "type": "project",
+      "path": "../../TelegramApi/TelegramApi.csproj",
+      "msbuildProject": "../../TelegramApi/TelegramApi.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    "MonoAndroid,Version=v13.0": [
+    "MonoAndroid,Version=v11.0": [
+      "TelegramApi >= 1.0.0",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2196",
       "le_mur >= 1.0.0"
@@ -3197,24 +3212,27 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "monoandroid13.0"
+        "monoandroid11.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "monoandroid13.0": {
+        "monoandroid11.0": {
           "projectReferences": {
             "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj": {
               "projectPath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj"
+            },
+            "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\TelegramApi\\TelegramApi.csproj": {
+              "projectPath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\TelegramApi\\TelegramApi.csproj"
             }
           }
         }
       }
     },
     "frameworks": {
-      "monoandroid13.0": {
+      "monoandroid11.0": {
         "dependencies": {
           "Xamarin.Essentials": {
             "target": "Package",

@@ -1,0 +1,15 @@
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\bin\Debug\netstandard2.0\le_mur.deps.json
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\bin\Debug\netstandard2.0\le_mur.dll
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\bin\Debug\netstandard2.0\ref\le_mur.dll
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\bin\Debug\netstandard2.0\le_mur.pdb
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.csproj.AssemblyReference.cache
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.AssemblyInfoInputs.cache
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.AssemblyInfo.cs
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.csproj.CoreCompileInputs.cache
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.dll
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\ref\le_mur.dll
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.pdb

@@ -35,17 +35,6 @@
           "lib/netstandard2.0/System.Numerics.Vectors.dll": {}
         }
       },
-      "TLSharp/0.1.0.574": {
-        "type": "package",
-        "compile": {
-          "lib/net46/TLSharp.Core.dll": {},
-          "lib/net46/TeleSharp.TL.dll": {}
-        },
-        "runtime": {
-          "lib/net46/TLSharp.Core.dll": {},
-          "lib/net46/TeleSharp.TL.dll": {}
-        }
-      },
       "Xamarin.Essentials/1.7.0": {
         "type": "package",
         "dependencies": {
@@ -267,20 +256,6 @@
         "system.numerics.vectors.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
-      ]
-    },
-    "TLSharp/0.1.0.574": {
-      "sha512": "OzLvXyTIZsHkJbX3iZRSb1vQdnkyO5yNcdPK80Snbrpm4kab59FdtijFGQRhe2NVjjKe5TabzxNPH3M0B64Lyw==",
-      "type": "package",
-      "path": "tlsharp/0.1.0.574",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net45/TeleSharp.TL.dll",
-        "lib/net46/TLSharp.Core.dll",
-        "lib/net46/TeleSharp.TL.dll",
-        "tlsharp.0.1.0.574.nupkg.sha512",
-        "tlsharp.nuspec"
       ]
     },
     "Xamarin.Essentials/1.7.0": {
@@ -545,7 +520,6 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "NETStandard.Library >= 2.0.3",
-      "TLSharp >= 0.1.0.574",
       "Xamarin.Essentials >= 1.7.0",
       "Xamarin.Forms >= 5.0.0.2196"
     ]
@@ -605,10 +579,6 @@
             "version": "[2.0.3, )",
             "autoReferenced": true
           },
-          "TLSharp": {
-            "target": "Package",
-            "version": "[0.1.0.574, )"
-          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.7.0, )"
@@ -631,17 +601,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.127\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Пакет \"TLSharp 0.1.0.574\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETStandard,Version=v2.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
-      "libraryId": "TLSharp",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }
