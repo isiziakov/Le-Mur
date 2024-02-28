@@ -1,14 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "pgvSoDuf1lxWlRflz0qoxi6kbftn0eL770UsdS9owbaAasIxvd53Y2xglM1DJamR2BQjQqI9OMW1EGl3OUUJzg==",
+  "dgSpecHash": "7Dae72ijd4mMDXQGYa59xPriJnSJ0Xqd147/d7Ii1qEQB/pXtuObGT+E27ipEA6fNv2XMJcgdlXH/GCmUSqycQ==",
   "success": true,
-  "projectFilePath": "D:\\университет\\lemut\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj",
+  "projectFilePath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dasha\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\dasha\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\dasha\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\dasha\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
-    "C:\\Users\\dasha\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+    "C:\\Users\\ivans\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\tlsharp\\0.1.0.574\\tlsharp.0.1.0.574.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"TLSharp 0.1.0.574\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETStandard,Version=v2.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "TLSharp",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
