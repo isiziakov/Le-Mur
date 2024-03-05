@@ -19,9 +19,8 @@ public class EnergySaverBroadcastReceiver
 	public EnergySaverBroadcastReceiver ()
 	{
 		super ();
-		if (getClass () == EnergySaverBroadcastReceiver.class) {
+		if (getClass () == EnergySaverBroadcastReceiver.class)
 			mono.android.TypeManager.Activate ("Xamarin.Essentials.EnergySaverBroadcastReceiver, Xamarin.Essentials", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

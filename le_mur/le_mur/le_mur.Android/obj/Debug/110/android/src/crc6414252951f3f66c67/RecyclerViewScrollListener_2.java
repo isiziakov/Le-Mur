@@ -19,9 +19,8 @@ public class RecyclerViewScrollListener_2
 	public RecyclerViewScrollListener_2 ()
 	{
 		super ();
-		if (getClass () == RecyclerViewScrollListener_2.class) {
+		if (getClass () == RecyclerViewScrollListener_2.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.CollectionView.RecyclerViewScrollListener`2, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

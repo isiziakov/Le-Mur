@@ -20,9 +20,8 @@ public class RectEvaluator
 	public RectEvaluator ()
 	{
 		super ();
-		if (getClass () == RectEvaluator.class) {
+		if (getClass () == RectEvaluator.class)
 			mono.android.TypeManager.Activate ("AndroidX.Transitions.RectEvaluator, Xamarin.AndroidX.Transition", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

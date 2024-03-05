@@ -20,9 +20,8 @@ public class OnContextAvailableListenerImplementor
 	public OnContextAvailableListenerImplementor ()
 	{
 		super ();
-		if (getClass () == OnContextAvailableListenerImplementor.class) {
+		if (getClass () == OnContextAvailableListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.Activity.ContextAware.IOnContextAvailableListenerImplementor, Xamarin.AndroidX.Activity", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

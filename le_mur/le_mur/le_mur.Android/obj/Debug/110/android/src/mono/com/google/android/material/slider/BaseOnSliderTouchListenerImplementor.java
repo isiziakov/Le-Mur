@@ -21,9 +21,8 @@ public class BaseOnSliderTouchListenerImplementor
 	public BaseOnSliderTouchListenerImplementor ()
 	{
 		super ();
-		if (getClass () == BaseOnSliderTouchListenerImplementor.class) {
+		if (getClass () == BaseOnSliderTouchListenerImplementor.class)
 			mono.android.TypeManager.Activate ("Google.Android.Material.Slider.IBaseOnSliderTouchListenerImplementor, Xamarin.Google.Android.Material", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

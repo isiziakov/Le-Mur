@@ -20,9 +20,8 @@ public class ViewUtils_OnApplyWindowInsetsListenerImplementor
 	public ViewUtils_OnApplyWindowInsetsListenerImplementor ()
 	{
 		super ();
-		if (getClass () == ViewUtils_OnApplyWindowInsetsListenerImplementor.class) {
+		if (getClass () == ViewUtils_OnApplyWindowInsetsListenerImplementor.class)
 			mono.android.TypeManager.Activate ("Google.Android.Material.Internal.ViewUtils+IOnApplyWindowInsetsListenerImplementor, Xamarin.Google.Android.Material", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

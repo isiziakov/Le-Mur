@@ -22,9 +22,8 @@ public class GenericAnimatorListener
 	public GenericAnimatorListener ()
 	{
 		super ();
-		if (getClass () == GenericAnimatorListener.class) {
+		if (getClass () == GenericAnimatorListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.GenericAnimatorListener, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

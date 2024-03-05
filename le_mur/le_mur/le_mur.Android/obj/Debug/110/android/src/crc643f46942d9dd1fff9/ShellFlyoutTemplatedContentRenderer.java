@@ -20,9 +20,8 @@ public class ShellFlyoutTemplatedContentRenderer
 	public ShellFlyoutTemplatedContentRenderer ()
 	{
 		super ();
-		if (getClass () == ShellFlyoutTemplatedContentRenderer.class) {
+		if (getClass () == ShellFlyoutTemplatedContentRenderer.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ShellFlyoutTemplatedContentRenderer, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

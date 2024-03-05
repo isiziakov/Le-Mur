@@ -20,9 +20,8 @@ public class CarouselViewRenderer_CarouselViewOnScrollListener
 	public CarouselViewRenderer_CarouselViewOnScrollListener ()
 	{
 		super ();
-		if (getClass () == CarouselViewRenderer_CarouselViewOnScrollListener.class) {
+		if (getClass () == CarouselViewRenderer_CarouselViewOnScrollListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.CarouselViewRenderer+CarouselViewOnScrollListener, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

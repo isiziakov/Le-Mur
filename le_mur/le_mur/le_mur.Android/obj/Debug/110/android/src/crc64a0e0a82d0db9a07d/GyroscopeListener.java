@@ -21,9 +21,8 @@ public class GyroscopeListener
 	public GyroscopeListener ()
 	{
 		super ();
-		if (getClass () == GyroscopeListener.class) {
+		if (getClass () == GyroscopeListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Essentials.GyroscopeListener, Xamarin.Essentials", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

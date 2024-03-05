@@ -20,9 +20,8 @@ public class GenericMenuClickListener
 	public GenericMenuClickListener ()
 	{
 		super ();
-		if (getClass () == GenericMenuClickListener.class) {
+		if (getClass () == GenericMenuClickListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.GenericMenuClickListener, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

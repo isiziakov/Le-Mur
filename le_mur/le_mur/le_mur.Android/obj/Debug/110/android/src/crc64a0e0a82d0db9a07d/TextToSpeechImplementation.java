@@ -22,9 +22,8 @@ public class TextToSpeechImplementation
 	public TextToSpeechImplementation ()
 	{
 		super ();
-		if (getClass () == TextToSpeechImplementation.class) {
+		if (getClass () == TextToSpeechImplementation.class)
 			mono.android.TypeManager.Activate ("Xamarin.Essentials.TextToSpeechImplementation, Xamarin.Essentials", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

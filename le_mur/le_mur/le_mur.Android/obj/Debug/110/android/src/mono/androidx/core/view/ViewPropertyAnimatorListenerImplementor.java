@@ -22,9 +22,8 @@ public class ViewPropertyAnimatorListenerImplementor
 	public ViewPropertyAnimatorListenerImplementor ()
 	{
 		super ();
-		if (getClass () == ViewPropertyAnimatorListenerImplementor.class) {
+		if (getClass () == ViewPropertyAnimatorListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.Core.View.IViewPropertyAnimatorListenerImplementor, Xamarin.AndroidX.Core", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

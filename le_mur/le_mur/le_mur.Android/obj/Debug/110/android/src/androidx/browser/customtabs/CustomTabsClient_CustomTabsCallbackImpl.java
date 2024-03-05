@@ -20,9 +20,8 @@ public class CustomTabsClient_CustomTabsCallbackImpl
 	public CustomTabsClient_CustomTabsCallbackImpl ()
 	{
 		super ();
-		if (getClass () == CustomTabsClient_CustomTabsCallbackImpl.class) {
+		if (getClass () == CustomTabsClient_CustomTabsCallbackImpl.class)
 			mono.android.TypeManager.Activate ("AndroidX.Browser.CustomTabs.CustomTabsClient+CustomTabsCallbackImpl, Xamarin.AndroidX.Browser", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

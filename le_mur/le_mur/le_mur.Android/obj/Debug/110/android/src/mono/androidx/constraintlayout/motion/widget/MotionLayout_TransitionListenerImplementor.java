@@ -23,9 +23,8 @@ public class MotionLayout_TransitionListenerImplementor
 	public MotionLayout_TransitionListenerImplementor ()
 	{
 		super ();
-		if (getClass () == MotionLayout_TransitionListenerImplementor.class) {
+		if (getClass () == MotionLayout_TransitionListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.ConstraintLayout.Motion.Widget.MotionLayout+ITransitionListenerImplementor, Xamarin.AndroidX.ConstraintLayout", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

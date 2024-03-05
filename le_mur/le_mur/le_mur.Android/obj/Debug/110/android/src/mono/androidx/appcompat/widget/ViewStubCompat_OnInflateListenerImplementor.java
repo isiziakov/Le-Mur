@@ -20,9 +20,8 @@ public class ViewStubCompat_OnInflateListenerImplementor
 	public ViewStubCompat_OnInflateListenerImplementor ()
 	{
 		super ();
-		if (getClass () == ViewStubCompat_OnInflateListenerImplementor.class) {
+		if (getClass () == ViewStubCompat_OnInflateListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.AppCompat.Widget.ViewStubCompat+IOnInflateListenerImplementor, Xamarin.AndroidX.AppCompat", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

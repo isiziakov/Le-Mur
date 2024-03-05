@@ -21,9 +21,8 @@ public class InnerScaleListener
 	public InnerScaleListener ()
 	{
 		super ();
-		if (getClass () == InnerScaleListener.class) {
+		if (getClass () == InnerScaleListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.InnerScaleListener, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

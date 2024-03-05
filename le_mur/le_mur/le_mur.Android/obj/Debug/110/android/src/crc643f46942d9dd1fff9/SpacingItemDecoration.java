@@ -19,9 +19,8 @@ public class SpacingItemDecoration
 	public SpacingItemDecoration ()
 	{
 		super ();
-		if (getClass () == SpacingItemDecoration.class) {
+		if (getClass () == SpacingItemDecoration.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.SpacingItemDecoration, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

@@ -20,9 +20,8 @@ public class PopupMenu_OnMenuItemClickListenerImplementor
 	public PopupMenu_OnMenuItemClickListenerImplementor ()
 	{
 		super ();
-		if (getClass () == PopupMenu_OnMenuItemClickListenerImplementor.class) {
+		if (getClass () == PopupMenu_OnMenuItemClickListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.AppCompat.Widget.PopupMenu+IOnMenuItemClickListenerImplementor, Xamarin.AndroidX.AppCompat", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

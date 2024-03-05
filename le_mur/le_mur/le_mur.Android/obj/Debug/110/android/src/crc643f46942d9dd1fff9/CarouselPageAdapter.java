@@ -27,9 +27,8 @@ public class CarouselPageAdapter
 	public CarouselPageAdapter ()
 	{
 		super ();
-		if (getClass () == CarouselPageAdapter.class) {
+		if (getClass () == CarouselPageAdapter.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.CarouselPageAdapter, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

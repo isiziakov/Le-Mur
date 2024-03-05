@@ -20,9 +20,8 @@ public class FormattedStringExtensions_TextDecorationSpan
 	public FormattedStringExtensions_TextDecorationSpan ()
 	{
 		super ();
-		if (getClass () == FormattedStringExtensions_TextDecorationSpan.class) {
+		if (getClass () == FormattedStringExtensions_TextDecorationSpan.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.FormattedStringExtensions+TextDecorationSpan, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

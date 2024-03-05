@@ -19,9 +19,8 @@ public class ColorChangeRevealDrawable
 	public ColorChangeRevealDrawable ()
 	{
 		super ();
-		if (getClass () == ColorChangeRevealDrawable.class) {
+		if (getClass () == ColorChangeRevealDrawable.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ColorChangeRevealDrawable, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

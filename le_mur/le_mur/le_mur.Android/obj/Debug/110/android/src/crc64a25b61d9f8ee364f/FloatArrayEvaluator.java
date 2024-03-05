@@ -20,9 +20,8 @@ public class FloatArrayEvaluator
 	public FloatArrayEvaluator ()
 	{
 		super ();
-		if (getClass () == FloatArrayEvaluator.class) {
+		if (getClass () == FloatArrayEvaluator.class)
 			mono.android.TypeManager.Activate ("AndroidX.Transitions.FloatArrayEvaluator, Xamarin.AndroidX.Transition", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

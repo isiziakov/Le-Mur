@@ -20,9 +20,8 @@ public class ActionBar_OnMenuVisibilityListenerImplementor
 	public ActionBar_OnMenuVisibilityListenerImplementor ()
 	{
 		super ();
-		if (getClass () == ActionBar_OnMenuVisibilityListenerImplementor.class) {
+		if (getClass () == ActionBar_OnMenuVisibilityListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.AppCompat.App.ActionBar+IOnMenuVisibilityListenerImplementor, Xamarin.AndroidX.AppCompat", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

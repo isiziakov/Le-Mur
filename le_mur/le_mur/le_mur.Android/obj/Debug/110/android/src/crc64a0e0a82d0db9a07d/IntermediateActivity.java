@@ -21,9 +21,8 @@ public class IntermediateActivity
 	public IntermediateActivity ()
 	{
 		super ();
-		if (getClass () == IntermediateActivity.class) {
+		if (getClass () == IntermediateActivity.class)
 			mono.android.TypeManager.Activate ("Xamarin.Essentials.IntermediateActivity, Xamarin.Essentials", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

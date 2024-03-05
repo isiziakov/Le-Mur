@@ -20,9 +20,8 @@ public class StartSnapHelper
 	public StartSnapHelper ()
 	{
 		super ();
-		if (getClass () == StartSnapHelper.class) {
+		if (getClass () == StartSnapHelper.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.StartSnapHelper, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

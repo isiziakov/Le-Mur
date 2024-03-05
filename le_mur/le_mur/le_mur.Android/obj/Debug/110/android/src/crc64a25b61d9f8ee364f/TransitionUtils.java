@@ -18,9 +18,8 @@ public class TransitionUtils
 	public TransitionUtils ()
 	{
 		super ();
-		if (getClass () == TransitionUtils.class) {
+		if (getClass () == TransitionUtils.class)
 			mono.android.TypeManager.Activate ("AndroidX.Transitions.TransitionUtils, Xamarin.AndroidX.Transition", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 	private java.util.ArrayList refList;

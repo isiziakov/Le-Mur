@@ -23,9 +23,8 @@ public class SingleLocationListener
 	public SingleLocationListener ()
 	{
 		super ();
-		if (getClass () == SingleLocationListener.class) {
+		if (getClass () == SingleLocationListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Essentials.SingleLocationListener, Xamarin.Essentials", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

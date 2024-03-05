@@ -22,9 +22,8 @@ public class FormsAnimationDrawable
 	public FormsAnimationDrawable ()
 	{
 		super ();
-		if (getClass () == FormsAnimationDrawable.class) {
+		if (getClass () == FormsAnimationDrawable.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.FormsAnimationDrawable, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

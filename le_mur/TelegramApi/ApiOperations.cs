@@ -19,7 +19,7 @@ namespace le_mur.TelegramApi
 
         public static async Task MakeClient()
         {
-            TelegramClient client = new TelegramClient(15526450, "4370eb53775b7b474321d4691ca5dacf");
+            client = new TelegramClient(15526450, "4370eb53775b7b474321d4691ca5dacf");
             await client.ConnectAsync();
         }
 
@@ -37,7 +37,7 @@ namespace le_mur.TelegramApi
 
         public static async Task<bool> MakeAuth(string hash, string code)
         {
-            user = await client.MakeAuthAsync("+79632153559", hash, code);
+            user = await client.MakeAuthAsync(phone, hash, code);
             if (user == null)
             {
                 return false;

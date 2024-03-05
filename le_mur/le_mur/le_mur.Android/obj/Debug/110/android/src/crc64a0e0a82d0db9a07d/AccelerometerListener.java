@@ -21,9 +21,8 @@ public class AccelerometerListener
 	public AccelerometerListener ()
 	{
 		super ();
-		if (getClass () == AccelerometerListener.class) {
+		if (getClass () == AccelerometerListener.class)
 			mono.android.TypeManager.Activate ("Xamarin.Essentials.AccelerometerListener, Xamarin.Essentials", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

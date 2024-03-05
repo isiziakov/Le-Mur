@@ -20,9 +20,8 @@ public class DragAndDropGestureHandler
 	public DragAndDropGestureHandler ()
 	{
 		super ();
-		if (getClass () == DragAndDropGestureHandler.class) {
+		if (getClass () == DragAndDropGestureHandler.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.DragAndDropGestureHandler, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

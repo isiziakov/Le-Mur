@@ -1,2 +1,2 @@
-AdbTarget=-s RF8R21DV1FP
+AdbTarget=-s emulator-5554
 AdbOptions=

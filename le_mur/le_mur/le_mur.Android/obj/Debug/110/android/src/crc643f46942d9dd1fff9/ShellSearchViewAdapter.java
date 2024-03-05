@@ -24,9 +24,8 @@ public class ShellSearchViewAdapter
 	public ShellSearchViewAdapter ()
 	{
 		super ();
-		if (getClass () == ShellSearchViewAdapter.class) {
+		if (getClass () == ShellSearchViewAdapter.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.ShellSearchViewAdapter, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

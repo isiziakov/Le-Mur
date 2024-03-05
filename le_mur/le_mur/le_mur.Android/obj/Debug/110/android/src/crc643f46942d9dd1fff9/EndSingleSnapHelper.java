@@ -19,9 +19,8 @@ public class EndSingleSnapHelper
 	public EndSingleSnapHelper ()
 	{
 		super ();
-		if (getClass () == EndSingleSnapHelper.class) {
+		if (getClass () == EndSingleSnapHelper.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.EndSingleSnapHelper, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

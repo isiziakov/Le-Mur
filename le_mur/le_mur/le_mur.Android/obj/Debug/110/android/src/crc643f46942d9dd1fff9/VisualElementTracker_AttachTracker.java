@@ -21,9 +21,8 @@ public class VisualElementTracker_AttachTracker
 	public VisualElementTracker_AttachTracker ()
 	{
 		super ();
-		if (getClass () == VisualElementTracker_AttachTracker.class) {
+		if (getClass () == VisualElementTracker_AttachTracker.class)
 			mono.android.TypeManager.Activate ("Xamarin.Forms.Platform.Android.VisualElementTracker+AttachTracker, Xamarin.Forms.Platform.Android", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

@@ -20,9 +20,8 @@ public class SwipeRefreshLayout_OnRefreshListenerImplementor
 	public SwipeRefreshLayout_OnRefreshListenerImplementor ()
 	{
 		super ();
-		if (getClass () == SwipeRefreshLayout_OnRefreshListenerImplementor.class) {
+		if (getClass () == SwipeRefreshLayout_OnRefreshListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.SwipeRefreshLayout.Widget.SwipeRefreshLayout+IOnRefreshListenerImplementor, Xamarin.AndroidX.SwipeRefreshLayout", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

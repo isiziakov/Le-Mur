@@ -20,9 +20,8 @@ public class Loader_OnLoadCanceledListenerImplementor
 	public Loader_OnLoadCanceledListenerImplementor ()
 	{
 		super ();
-		if (getClass () == Loader_OnLoadCanceledListenerImplementor.class) {
+		if (getClass () == Loader_OnLoadCanceledListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.Loader.Content.Loader+IOnLoadCanceledListenerImplementor, Xamarin.AndroidX.Loader", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 

@@ -20,9 +20,8 @@ public class AlertDialog_IDialogInterfaceOnCancelListenerImplementor
 	public AlertDialog_IDialogInterfaceOnCancelListenerImplementor ()
 	{
 		super ();
-		if (getClass () == AlertDialog_IDialogInterfaceOnCancelListenerImplementor.class) {
+		if (getClass () == AlertDialog_IDialogInterfaceOnCancelListenerImplementor.class)
 			mono.android.TypeManager.Activate ("AndroidX.AppCompat.App.AlertDialog+IDialogInterfaceOnCancelListenerImplementor, Xamarin.AndroidX.AppCompat", "", this, new java.lang.Object[] {  });
-		}
 	}
 
 
