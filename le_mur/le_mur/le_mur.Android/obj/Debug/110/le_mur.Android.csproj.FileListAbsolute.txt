@@ -1283,3 +1283,9 @@ D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\11
 D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
 D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\TelegramApi.dll.mdb
+D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\res\drawable\post2.png
+D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\res\drawable\post1.png
+D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\res\drawable\comment.png
+D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\res\drawable\favourites.png
+D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\res\drawable\like.png
+D:\университет\lemut\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\res\drawable\chanel.gif
