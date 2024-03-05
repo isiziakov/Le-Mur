@@ -58,27 +58,6 @@
             "fileVersion": "5.0.0.786"
           }
         }
-      },
-      "TelegramApi/1.0.0": {
-        "runtime": {
-          "TelegramApi.dll": {}
-        }
-      },
-      "TLSharp.Core/1.0.0.0": {
-        "runtime": {
-          "TLSharp.Core.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "TeleSharp.TL/1.0.0.0": {
-        "runtime": {
-          "TeleSharp.TL.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
       }
     }
   },
@@ -122,21 +101,6 @@
       "sha512": "sha512-zSXDiZukojtEBmZKUUG1yYBwlB9tI8JLPkc6n+Sm1PAX01QyzErWE9AaFJgP7usyoGHn92l4HnQF7A+/MPI6VA==",
       "path": "xamarin.forms/5.0.0.2196",
       "hashPath": "xamarin.forms.5.0.0.2196.nupkg.sha512"
-    },
-    "TelegramApi/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TLSharp.Core/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "TeleSharp.TL/1.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

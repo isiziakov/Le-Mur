@@ -653,10 +653,6 @@ C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\com.company
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\com.companyname.le_mur-Signed.apk
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\com.companyname.le_mur-Signed.apk.idsig
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\le_mur.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\TelegramApi.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\TLSharp.Core.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\TeleSharp.TL.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\TelegramApi.pdb
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\le_mur.pdb
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\MonoAndroid,Version=v11.0.AssemblyAttributes.cs
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\build.props
@@ -764,10 +760,6 @@ C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\System.Xml.Linq.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\System.Xml.Linq.pdb
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\System.Xml.pdb
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\TelegramApi.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\TelegramApi.dll.mdb
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\TeleSharp.TL.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\TLSharp.Core.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\Xamarin.AndroidX.Activity.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\Xamarin.AndroidX.Activity.pdb
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\android\assets\Xamarin.AndroidX.Annotation.dll
@@ -1282,4 +1274,3 @@ C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\stamp\_
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.Android\bin\Debug\TelegramApi.dll.mdb

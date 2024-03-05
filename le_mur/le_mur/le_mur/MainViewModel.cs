@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using Xamarin.Forms;
-using le_mur.TelegramApi;
 
 namespace le_mur
 {
@@ -48,7 +47,7 @@ namespace le_mur
 
         private async void onDownloadCommand()
         {
-            await TelegramApi.ApiOperations.MakeClient();
+            /*await TelegramApi.ApiOperations.MakeClient();
             var res = await TelegramApi.ApiOperations.Auth();
             if (res == "")
             {
@@ -62,7 +61,7 @@ namespace le_mur
                     foreach (string d in await ApiOperations.GetChannels())
                         Groups.Add(d);
                 }
-            }
+            }*/
         }
     }
 }

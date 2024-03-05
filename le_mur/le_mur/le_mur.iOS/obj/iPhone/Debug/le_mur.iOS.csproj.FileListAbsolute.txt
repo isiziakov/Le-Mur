@@ -107,11 +107,7 @@ C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\zh-HK\Xa
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\le_mur.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\TelegramApi.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\TLSharp.Core.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\TeleSharp.TL.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\le_mur.pdb
-C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\bin\iPhone\Debug\TelegramApi.pdb
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur.iOS\obj\iPhone\Debug\actool\_ProcessedImageAssetsPath.items
