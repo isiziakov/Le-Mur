@@ -11,7 +11,6 @@ namespace le_mur
     {
         public Command DownloadCommand { get; }
 
-        private WTelegram.Client client = null;
         private string code;
         public string Code
         {
@@ -45,14 +44,10 @@ namespace le_mur
             DownloadCommand = new Command(onDownloadCommand);
 
             Groups = new ObservableCollection<string>();
-
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("files", "session.dat");
-            client = new WTelegram.Client(15526450, "4370eb53775b7b474321d4691ca5dacf", path);
         }
 
         private async void onDownloadCommand()
         {
-            
             /*await TelegramApi.ApiOperations.MakeClient();
             var res = await TelegramApi.ApiOperations.Auth();
             if (res == "")
