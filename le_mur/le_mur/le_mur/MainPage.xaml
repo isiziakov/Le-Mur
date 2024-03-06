@@ -2,15 +2,69 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:le_mur"
-             x:Class="le_mur.MainPage">
+             x:Class="le_mur.MainPage"
+             Background="white">
 
     <StackLayout>
-        <StackLayout Orientation="Horizontal">
-            <Entry Text="{Binding Code}"/>
-            <Button Command="{Binding DownloadCommand}"/>
+
+        <StackLayout Orientation="Horizontal" Padding="20" VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="Le Mur" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
+            <StackLayout>
+                
+            </StackLayout>
         </StackLayout>
 
-        <ListView ItemsSource="{Binding Groups}" HasUnevenRows="True" SelectionMode="None"/>
+        <ScrollView>
+            <ListView x:Name="postsList" ItemsSource="{Binding Posts}" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout x:Name="Item">
+                                    <StackLayout Orientation="Horizontal" Padding="5, 5, 5, 5">
+                                        <Image Source="{Binding ChanelImage}" WidthRequest="50" Margin="10,0"/>
+                                        <StackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding ChanelName}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                            <Label Text="{Binding ChanelTheme}" FontFamily="Montsserat" FontAttributes="None" FontSize="12" Margin="0, -5, 0, 0" TextColor="Black"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                    <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand"/>
+                                    <StackLayout Orientation="Horizontal" Padding="10">
+                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black">
+                                            <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
+                                                <Image Source="like.png" WidthRequest="20">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference postsList}, Path=BindingContext.LikeCommand}" CommandParameter="{Binding Id}"></TapGestureRecognizer>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Frame>
+                                        </Frame>
+                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black">
+                                            <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
+                                                <Image Source="comment.png" WidthRequest="20">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference postsList}, Path=BindingContext.CommentCommand}" CommandParameter="{Binding Id}"></TapGestureRecognizer>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Frame>
+                                        </Frame>
+                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black">
+                                            <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
+                                                <Image Source="favourites.png" WidthRequest="20">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference postsList}, Path=BindingContext.FavouritesCommand}" CommandParameter="{Binding Id}"></TapGestureRecognizer>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Frame>
+                                        </Frame>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
 
     </StackLayout>
 
