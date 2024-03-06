@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="le_mur.AuthPage"
+             Background="white">
+    
+    <StackLayout Orientation="Vertical">
+        <StackLayout IsVisible="{Binding Visible}" Margin="0,50,0,0">
+            <Label Text="Введите код авторизации!" FontSize="Large" HorizontalOptions="Center" TextColor="Black" />
+            <Entry Text="{Binding Code}" TextColor="Black" PlaceholderColor="Gray" Placeholder = "12345" FontSize="Large" HorizontalOptions="Center" />
+            <Button Command="{Binding SendCodeCommand}" Text="Продолжить" TextColor="White" HorizontalOptions="Center" />
+        </StackLayout>
+
+        <ListView ItemsSource="{Binding ChatsTitles}" HasUnevenRows="True" SelectionMode="None"/>
+
+    </StackLayout>
+
+</ContentPage>

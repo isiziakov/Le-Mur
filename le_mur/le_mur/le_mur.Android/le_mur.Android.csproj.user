@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SelectedDevice>Pixel_XL_API_30</SelectedDevice>
-    <ActiveDebugProfile>Pixel_XL_API_30</ActiveDebugProfile>
+    <SelectedDevice>realme RMX2001</SelectedDevice>
+    <ActiveDebugProfile>realme RMX2001 %28Android 11.0 — API 30%29</ActiveDebugProfile>
     <DefaultDevice>Pixel_XL_API_30</DefaultDevice>
     <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
   </PropertyGroup>

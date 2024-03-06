@@ -10,7 +10,6 @@
       "le_mur/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "TelegramApi": "1.0.0",
           "WTelegramClient": "3.6.6",
           "Xamarin.Essentials": "1.7.0",
           "Xamarin.Forms": "5.0.0.2196"
