@@ -3,11 +3,13 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "le_mur.Android.dll" comes first in this list. */
 		"le_mur.Android.dll",
-		"TLSharp.Core.dll",
-		"TeleSharp.TL.dll",
 		"FormsViewGroup.dll",
+		"IndexRange.dll",
 		"le_mur.dll",
-		"TelegramApi.dll",
+		"Microsoft.Bcl.AsyncInterfaces.dll",
+		"System.Text.Encodings.Web.dll",
+		"System.Text.Json.dll",
+		"WTelegramClient.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
 		"Xamarin.AndroidX.Annotation.Experimental.dll",

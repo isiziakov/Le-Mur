@@ -36,9 +36,6 @@
             "projectReferences": {
               "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj": {
                 "projectPath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj"
-              },
-              "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\TelegramApi\\TelegramApi.csproj": {
-                "projectPath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\TelegramApi\\TelegramApi.csproj"
               }
             }
           }
@@ -89,7 +86,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\TelegramApi\\TelegramApi.csproj": {
+                "projectPath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\TelegramApi\\TelegramApi.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -107,6 +108,10 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "WTelegramClient": {
+              "target": "Package",
+              "version": "[3.6.6, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

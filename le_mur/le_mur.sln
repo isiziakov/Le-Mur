@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "le_mur.iOS", "le_mur\le_mur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "le_mur", "le_mur\le_mur\le_mur.csproj", "{0DD0F5F3-0489-4C21-BC86-5C102498AB6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramApi", "TelegramApi\TelegramApi.csproj", "{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,18 +73,6 @@ Global
 		{0DD0F5F3-0489-4C21-BC86-5C102498AB6B}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{0DD0F5F3-0489-4C21-BC86-5C102498AB6B}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{0DD0F5F3-0489-4C21-BC86-5C102498AB6B}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Release|iPhone.Build.0 = Release|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{6E220F17-9E4B-4174-92C0-BC58EDEFF6ED}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

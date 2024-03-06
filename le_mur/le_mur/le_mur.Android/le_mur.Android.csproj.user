@@ -4,5 +4,6 @@
     <SelectedDevice>Pixel_XL_API_30</SelectedDevice>
     <ActiveDebugProfile>Pixel_XL_API_30</ActiveDebugProfile>
     <DefaultDevice>Pixel_XL_API_30</DefaultDevice>
+    <SelectedPlatformGroup>PhysicalDevice</SelectedPlatformGroup>
   </PropertyGroup>
 </Project>

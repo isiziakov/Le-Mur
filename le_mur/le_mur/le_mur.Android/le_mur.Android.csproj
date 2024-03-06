@@ -88,10 +88,6 @@
     <Folder Include="Resources\drawable\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TelegramApi\TelegramApi.csproj">
-      <Project>{6e220f17-9e4b-4174-92c0-bc58edeff6ed}</Project>
-      <Name>TelegramApi</Name>
-    </ProjectReference>
     <ProjectReference Include="..\le_mur\le_mur.csproj">
       <Project>{1A3F4D30-3222-4A73-87CD-0D1D9B94C581}</Project>
       <Name>le_mur</Name>

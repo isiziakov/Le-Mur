@@ -1,9 +1,0 @@
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\bin\Debug\TelegramApi.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\bin\Debug\TelegramApi.pdb
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\bin\Debug\TeleSharp.TL.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\bin\Debug\TLSharp.Core.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.AssemblyReference.cache
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.CoreCompileInputs.cache
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.csproj.CopyComplete
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.dll
-C:\Users\ivans\Desktop\Le-Mur\le_mur\TelegramApi\obj\Debug\TelegramApi.pdb

@@ -13,6 +13,7 @@ namespace le_mur
         public MainPage()
         {
             InitializeComponent();
+            this.BindingContext = new MainViewModel() { };
         }
     }
 }
