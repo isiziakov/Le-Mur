@@ -48,17 +48,11 @@ namespace le_mur
 
             var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("files", "session.dat");
             client = new WTelegram.Client(15526450, "4370eb53775b7b474321d4691ca5dacf", path);
-            ChangeAuth();
-        }
-
-        public async Task ChangeAuth()
-        {
-            await DoLogin("+79632153559");
         }
 
         private async void onDownloadCommand()
         {
-            await DoLogin(code);
+            
             /*await TelegramApi.ApiOperations.MakeClient();
             var res = await TelegramApi.ApiOperations.Auth();
             if (res == "")
@@ -74,8 +68,6 @@ namespace le_mur
                         Groups.Add(d);
                 }
             }*/
-            var data = await client.Messages_GetAllChats();
-            var a = 1;
         }
     }
 }
