@@ -4,7 +4,12 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "le_mur.Android.dll" comes first in this list. */
 		"le_mur.Android.dll",
 		"FormsViewGroup.dll",
+		"IndexRange.dll",
 		"le_mur.dll",
+		"Microsoft.Bcl.AsyncInterfaces.dll",
+		"System.Text.Encodings.Web.dll",
+		"System.Text.Json.dll",
+		"WTelegramClient.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",
 		"Xamarin.AndroidX.Annotation.Experimental.dll",

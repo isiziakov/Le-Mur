@@ -32,3 +32,4 @@ C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\Xaml
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\ref\le_mur.dll
 C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.pdb
+C:\Users\ivans\Desktop\Le-Mur\le_mur\le_mur\le_mur\obj\Debug\netstandard2.0\le_mur.csproj.AssemblyReference.cache

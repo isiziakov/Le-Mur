@@ -1,12 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "XtpIlBMi17YUGci708FS1ix1BOyGJkRKIcuk0WpoV5HuEv1+y3MAJga8PcigOtb0Lj3oJq9/LM6oU2KvKtHIlg==",
+  "dgSpecHash": "1h0unUKj1cPULrLwmnvXcPSOITNcNMHl8oR8pVNfXXVqZwoskDIdjnHPZmVHb9WND19FDZjd7K+5YTuGEFdUFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\ivans\\Desktop\\Le-Mur\\le_mur\\le_mur\\le_mur\\le_mur.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ivans\\.nuget\\packages\\indexrange\\1.0.2\\indexrange.1.0.2.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\ivans\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
     "C:\\Users\\ivans\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.text.json\\6.0.5\\system.text.json.6.0.5.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
+    "C:\\Users\\ivans\\.nuget\\packages\\wtelegramclient\\3.6.6\\wtelegramclient.3.6.6.nupkg.sha512",
     "C:\\Users\\ivans\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\ivans\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],

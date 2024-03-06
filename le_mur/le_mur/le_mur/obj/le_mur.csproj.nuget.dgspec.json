@@ -57,6 +57,10 @@
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "WTelegramClient": {
+              "target": "Package",
+              "version": "[3.6.6, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.0, )"
