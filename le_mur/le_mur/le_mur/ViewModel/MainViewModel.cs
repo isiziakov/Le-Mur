@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using le_mur.Models;
+using le_mur.Model;
 
-namespace le_mur
+namespace le_mur.ViewModel
 {
     public class MainViewModel : BaseViewModel
     {

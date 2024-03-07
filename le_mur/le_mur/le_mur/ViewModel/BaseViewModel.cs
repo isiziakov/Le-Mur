@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 using Xamarin.Forms;
 
-namespace le_mur
+namespace le_mur.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

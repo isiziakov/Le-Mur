@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace le_mur.Models
+namespace le_mur.Model
 {
     public class Post : INotifyPropertyChanged
     {

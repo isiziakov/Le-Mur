@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace le_mur
+using le_mur.ViewModel;
+
+namespace le_mur.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AuthPage : ContentPage

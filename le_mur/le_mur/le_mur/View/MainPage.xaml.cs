@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace le_mur
+using le_mur.ViewModel;
+
+namespace le_mur.View
 {
     public partial class MainPage : ContentPage
     {

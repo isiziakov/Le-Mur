@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace le_mur
+namespace le_mur.NetworkCalling
 {
     public static class TelegramApi
     {

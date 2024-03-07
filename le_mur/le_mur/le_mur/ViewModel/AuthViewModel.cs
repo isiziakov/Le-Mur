@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
+using le_mur.NetworkCalling;
 using Xamarin.Forms;
 
-namespace le_mur
+namespace le_mur.ViewModel
 {
     public class AuthViewModel : BaseViewModel
     {
@@ -43,8 +44,8 @@ namespace le_mur
         private AuthStatuses AuthStatus
         {
             get { return authStatus; }
-            set 
-            { 
+            set
+            {
                 if (authStatus == AuthStatuses.Ok)
                 {
                     Visible = false;
