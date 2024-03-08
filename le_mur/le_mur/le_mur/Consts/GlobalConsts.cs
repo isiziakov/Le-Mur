@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace le_mur
+namespace le_mur.Consts
 {
     static class GlobalConsts
     {
