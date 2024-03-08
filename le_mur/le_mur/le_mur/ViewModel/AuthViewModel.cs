@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using le_mur.NetworkCalling;
+using le_mur.Consts;
 using Xamarin.Forms;
 
 namespace le_mur.ViewModel
@@ -40,13 +37,13 @@ namespace le_mur.ViewModel
             }
         }
 
-        private AuthStatuses authStatus = AuthStatuses.NeedCode;
-        private AuthStatuses AuthStatus
+        private AuthStatus authStatus = AuthStatus.NeedCode;
+        private AuthStatus AuthStatus
         {
             get { return authStatus; }
             set
             {
-                if (authStatus == AuthStatuses.Ok)
+                if (authStatus == AuthStatus.Ok)
                 {
                     Visible = false;
                     //spisok
