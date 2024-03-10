@@ -68,16 +68,77 @@ namespace le_mur.NetworkCalling
         static async public Task<List<MessageInfo>> GetMessages(InputPeer peer, int offsetId = 0)
         {
             var res = new List<MessageInfo>();
-            var msgs = await client.Messages_GetHistory(peer, offsetId);
+            var msgs = await getMessages(peer, offsetId);
             foreach (var msg in msgs.Messages)
             {
                 if (msg is Message)
                 {
                     var message = (msg as Message);
-                    res.Add(new MessageInfo(message.ID, message.message));
+                    if (message.grouped_id != 0 && res.Count > 0 && res.Last().GroupId == message.grouped_id)
+                    {
+                        if (message.message != "")
+                        {
+                            res.Last().Text = message.message;
+                        }
+                    }
+                    else
+                    {
+                        res.Add(new MessageInfo(message.ID, message.message, message.grouped_id));
+                    }
+                    
+                    if (message.media is MessageMediaPhoto)
+                    {
+                        var media = message.media as MessageMediaPhoto;
+                        if (media.photo is Photo)
+                        {
+                            res.Last().images.Add(await GetImage(media.photo as Photo));
+                        }
+                    }
+                }
+            }
+            if (res.Count > 0 && res.Last().GroupId != 0)
+            {
+                msgs = await getMessages(peer, res.Last().Id);
+                foreach (var msg in msgs.Messages)
+                {
+                    if (msg is Message)
+                    {
+                        var message = (msg as Message);
+                        if (message.grouped_id != res.Last().GroupId)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            if (message.message != "")
+                            {
+                                res.Last().Text = message.message;
+                            }
+                            if (message.media is MessageMediaPhoto)
+                            {
+                                var media = message.media as MessageMediaPhoto;
+                                if (media.photo is Photo)
+                                {
+                                    res.Last().images.Add(await GetImage(media.photo as Photo));
+                                }
+                            }
+                        }
+                    }
                 }
             }
             return res;
+        }
+
+        static async public Task<byte[]> GetImage(Photo photo)
+        {
+            MemoryStream ms = new MemoryStream();
+            await client.DownloadFileAsync(photo, ms);
+            return ms.ToArray();
+        }
+
+        static async public Task<Messages_MessagesBase> getMessages(InputPeer peer, int offsetId)
+        {
+            return await client.Messages_GetHistory(peer, offsetId);
         }
     }
 }
