@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using le_mur.Consts;
+using le_mur.Helpers;
 using le_mur.Model;
 using TL;
 
@@ -15,7 +16,6 @@ namespace le_mur.NetworkCalling
         private static int apiId = GlobalConsts.apiId;
         private static string apiHash = GlobalConsts.apiHash;
         private static string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("files", "session.dat");
-        private static string phone = LocalConsts.phone;
         static TelegramApi()
         {
             client = new WTelegram.Client(apiId, apiHash, path);
@@ -23,7 +23,7 @@ namespace le_mur.NetworkCalling
 
         static async public Task<AuthStatus> CheckAuth()
         {
-            return await doLogin(phone);
+            return await doLogin(PreferencesHelper.GetPhoneNumber());
         }
 
         static async public Task<AuthStatus> Auth(string code)
