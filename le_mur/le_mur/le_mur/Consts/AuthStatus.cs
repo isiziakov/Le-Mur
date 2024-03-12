@@ -6,8 +6,8 @@ namespace le_mur.Consts
 {
     public enum AuthStatus
     {
-        Ok,
+        OK,
         NeedAuth,
-        NeedCode
+        NeedCode,
     }
 }
