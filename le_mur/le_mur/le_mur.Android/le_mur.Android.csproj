@@ -84,7 +84,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\preloader.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\le_mur\le_mur.csproj">
       <Project>{1A3F4D30-3222-4A73-87CD-0D1D9B94C581}</Project>
