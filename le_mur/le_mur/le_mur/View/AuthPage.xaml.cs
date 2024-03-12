@@ -17,7 +17,7 @@ namespace le_mur.View
         public AuthPage()
         {
             InitializeComponent();
-            this.BindingContext = new AuthViewModel() { };
+            this.BindingContext = new AuthViewModel() { Navigation = this.Navigation };
         }
     }
 }

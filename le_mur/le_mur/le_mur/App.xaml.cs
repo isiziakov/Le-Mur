@@ -12,7 +12,7 @@ namespace le_mur
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new AuthPage();
+            MainPage = new NavigationPage(new AuthPage());
         }
 
         protected override void OnStart()

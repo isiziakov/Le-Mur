@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="le_mur.View.ChanelsPage"
+             xmlns:vm="clr-namespace:le_mur"
+             Background="White">
+    
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" Padding="20" VerticalOptions="Center">
+            <Label Text="Le Mur" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
+            
+        </StackLayout>
+
+        <Frame HasShadow="False" CornerRadius="10" Padding="2" BackgroundColor="black" Margin="20,0">
+            <Frame HasShadow="False" CornerRadius="8" BackgroundColor="White" Padding="10,5">
+                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                    <Image Source="search.png" WidthRequest="30"/>
+                    <Entry Placeholder="Search" HorizontalOptions="FillAndExpand"/>
+                    <Image Source="tools.png" WidthRequest="30">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding ToolsCommand}"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+            </Frame>
+        </Frame>
+
+    </StackLayout>
+</ContentPage>
