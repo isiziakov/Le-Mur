@@ -5,7 +5,7 @@ using Xamarin.Essentials;
 
 namespace le_mur.Helpers
 {
-    static public class PreferencesHelpre
+    static public class PreferencesHelper
     {
         static public string GetPhoneNumber()
         {
