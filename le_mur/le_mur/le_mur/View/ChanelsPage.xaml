@@ -1,29 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
              x:Class="le_mur.View.ChanelsPage"
              xmlns:vm="clr-namespace:le_mur"
              Background="White">
     
     <StackLayout>
-        <StackLayout Orientation="Horizontal" Padding="20" VerticalOptions="Center">
-            <Label Text="Le Mur" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
-            
-        </StackLayout>
+        <Grid Margin="0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="3*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <Frame HasShadow="False" CornerRadius="10" Padding="2" BackgroundColor="black" Margin="20,0">
-            <Frame HasShadow="False" CornerRadius="8" BackgroundColor="White" Padding="10,5">
-                <StackLayout Orientation="Horizontal" VerticalOptions="Center">
-                    <Image Source="search.png" WidthRequest="30"/>
-                    <Entry Placeholder="Search" HorizontalOptions="FillAndExpand"/>
-                    <Image Source="tools.png" WidthRequest="30">
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding ToolsCommand}"/>
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
+            <Label Text="Le Mur" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+            <Frame HasShadow="False" CornerRadius="10" Padding="2" BackgroundColor="black" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,10,20,0">
+                <Frame HasShadow="False" CornerRadius="8" BackgroundColor="White" Padding="10,5">
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                        <Image Source="search.png" WidthRequest="30"/>
+                        <Entry Placeholder="Search" HorizontalOptions="FillAndExpand" Text="{Binding SearchRequest}"/>
+                        <Image Source="tools.png" WidthRequest="30">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ToolsCommand}"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </StackLayout>
+                </Frame>
             </Frame>
-        </Frame>
+
+            <Image Source="folder.png" Grid.Column="2" Grid.Row="0" Margin="10" HorizontalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding FoldersCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Frame HasShadow="False" CornerRadius="20" Padding="2" BackgroundColor="black" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" Margin="0,10">
+                <Frame HasShadow="False" CornerRadius="18" BackgroundColor="White" Padding="10,5">
+                    <StackLayout HorizontalOptions="Center">
+                        <Frame HasShadow="False" CornerRadius="20" Padding="2" BackgroundColor="black" WidthRequest="180">
+                            <Frame HasShadow="False" CornerRadius="18" BackgroundColor="White" Padding="10,0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="{Binding Selected}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
+                                    <Image Source="up.png" WidthRequest="20"></Image>
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="1"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Frame>
+                        <Frame HasShadow="False" CornerRadius="20" Padding="2" BackgroundColor="black">
+                            <Frame HasShadow="False" CornerRadius="18" BackgroundColor="White" Padding="10,0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="{Binding Second}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="#7A7A7A"/>
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="2"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Frame>
+                        <Frame HasShadow="False" CornerRadius="20" Padding="2" BackgroundColor="black">
+                            <Frame HasShadow="False" CornerRadius="18" BackgroundColor="White" Padding="10,0">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                                    <Label Text="{Binding Third}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="#7A7A7A"/>
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="3"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+                <Frame.Triggers>
+                    <DataTrigger Binding="{Binding IsOpen}" Value="false" TargetType="Frame">
+                        <Setter Property="IsVisible" Value="false"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding IsOpen}" Value="true" TargetType="Frame">
+                        <Setter Property="IsVisible" Value="true"/>
+                    </DataTrigger>
+                </Frame.Triggers>
+            </Frame>
+
+            <Frame HasShadow="False" CornerRadius="20" Padding="2" BackgroundColor="black" Grid.Column="1" Grid.Row="0" Margin="0,18">
+                <Frame HasShadow="False" CornerRadius="18" BackgroundColor="White" Padding="0,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label VerticalOptions="Center" Text="{Binding Selected}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
+                        <Image Source="down.png" WidthRequest="20"></Image>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="0"></TapGestureRecognizer>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame.Triggers>
+                    <DataTrigger Binding="{Binding IsOpen}" Value="false" TargetType="Frame">
+                        <Setter Property="IsVisible" Value="true"/>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding IsOpen}" Value="true" TargetType="Frame">
+                        <Setter Property="IsVisible" Value="false"/>
+                    </DataTrigger>
+                </Frame.Triggers>
+            </Frame>
+
+        </Grid>
+
+        <ScrollView>
+            <ListView x:Name="channelsList" ItemsSource="{Binding Channels}" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout x:Name="Item">
+                                    <Frame HasShadow="False" CornerRadius="5" Padding="2,2,2,10" BackgroundColor="black" Margin="5,0,5,10">
+                                        <Frame HasShadow="False" CornerRadius="3" BackgroundColor="White" Padding="12">
+                                            <Grid Padding="15,5">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="3*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <CI:CircleImage Source="{Binding Image}" Grid.Column="0"/>
+                                                <Label Margin="15,0" Grid.Column="1" VerticalOptions="Center" Text="{Binding Title}" FontFamily="MontsseratMedium" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                                <Image Source="greenCheck.png" WidthRequest="50" Grid.Column="2"></Image>
+                                            </Grid>
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
 
     </StackLayout>
 </ContentPage>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZfXvbL0n4tdK/A9DQq4YFVhW5c0hBo/Q4IXkpa2bizupVio+dY32sswyX5CCKziu8Era458y1mcoBDkwzFBZdA==",
+  "dgSpecHash": "R8erNOc5VJHeJ9fcB7z6fjCyaVjgsndtxd2wyqgivowE7tjHLnBizvLGsKnr+vLmHCM7hlClZ5hh9U+fqjldoA==",
   "success": true,
   "projectFilePath": "D:\\университет\\le_mur\\Le-Mur\\le_mur\\le_mur\\le_mur.iOS\\le_mur.iOS.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\dasha\\.nuget\\packages\\system.text.json\\6.0.5\\system.text.json.6.0.5.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\wtelegramclient\\3.6.6\\wtelegramclient.3.6.6.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\xam.plugins.forms.imagecircle\\3.0.0.5\\xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
   ],

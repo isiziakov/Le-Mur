@@ -15,6 +15,7 @@ namespace le_mur.View
         public ChanelsPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
             this.BindingContext = new ChanelsViewModel() { Navigation = this.Navigation };
         }
     }

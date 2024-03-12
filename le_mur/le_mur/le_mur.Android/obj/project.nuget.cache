@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "snC9/lSpUeWOmvWmzlnjznOM2moLvDXRhoVWmP3YRueabKCrigVS5XsXkaV15bnLLieqUthyhV2PB+LdAmOq8Q==",
+  "dgSpecHash": "/hWFGgBxeZI+qCxd9Mdd2kGIB9eJA1tUmwlP8KT+a9LNYzJrYyHjLC8Uzs7D4Q1PM2hUTLYKVwm7RSBEmPRpqw==",
   "success": true,
   "projectFilePath": "D:\\университет\\le_mur\\Le-Mur\\le_mur\\le_mur\\le_mur.Android\\le_mur.Android.csproj",
   "expectedPackageFiles": [
@@ -14,6 +14,7 @@
     "C:\\Users\\dasha\\.nuget\\packages\\system.text.json\\6.0.5\\system.text.json.6.0.5.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\wtelegramclient\\3.6.6\\wtelegramclient.3.6.6.nupkg.sha512",
+    "C:\\Users\\dasha\\.nuget\\packages\\xam.plugins.forms.imagecircle\\3.0.0.5\\xam.plugins.forms.imagecircle.3.0.0.5.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.androidx.activity\\1.2.4.1\\xamarin.androidx.activity.1.2.4.1.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.androidx.annotation\\1.2.0.1\\xamarin.androidx.annotation.1.2.0.1.nupkg.sha512",
     "C:\\Users\\dasha\\.nuget\\packages\\xamarin.androidx.annotation.experimental\\1.1.0.1\\xamarin.androidx.annotation.experimental.1.1.0.1.nupkg.sha512",
