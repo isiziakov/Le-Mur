@@ -2,12 +2,16 @@
 using le_mur.NetworkCalling;
 using le_mur.Consts;
 using Xamarin.Forms;
+using le_mur.View;
+using System;
+using TL;
 
 namespace le_mur.ViewModel
 {
     public class AuthViewModel : BaseViewModel
     {
         public Command SendCodeCommand { get; }
+        public Command NextCommand { get; }
 
         private string code;
         public string Code
@@ -73,9 +77,16 @@ namespace le_mur.ViewModel
         public AuthViewModel()
         {
             SendCodeCommand = new Command(onSendCodeCommand);
+            NextCommand = new Command(onNextCommand);
             ChatsTitles = new ObservableCollection<string>();
 
             Auth();
+        }
+
+        public INavigation Navigation { get; set; }
+        private void onNextCommand()
+        {
+            Navigation.PushAsync(new ChanelsPage());
         }
 
         private async void Auth()

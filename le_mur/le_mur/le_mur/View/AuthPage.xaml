@@ -11,7 +11,7 @@
             <Button Command="{Binding SendCodeCommand}" Text="Продолжить" TextColor="White" HorizontalOptions="Center" />
         </StackLayout>
 
-        <ListView ItemsSource="{Binding ChatsTitles}" HasUnevenRows="True" SelectionMode="None"/>
+        <Button Command="{Binding NextCommand}" Text="МЯУ" TextColor="White" HorizontalOptions="Center" />
 
     </StackLayout>
 
