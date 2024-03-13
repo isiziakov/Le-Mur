@@ -8,6 +8,6 @@ namespace le_mur.Consts
     {
         Ok,
         NeedAuth,
-        NeedCode
+        NeedCode,
     }
 }

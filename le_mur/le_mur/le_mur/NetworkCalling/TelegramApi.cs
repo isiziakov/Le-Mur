@@ -23,6 +23,7 @@ namespace le_mur.NetworkCalling
 
         static async public Task<AuthStatus> CheckAuth()
         {
+            PreferencesHelper.SetPhoneNumber(LocalConsts.phone);
             return await doLogin(PreferencesHelper.GetPhoneNumber());
         }
 
