@@ -9,11 +9,8 @@ namespace le_mur
     {
         public App()
         {
-            InitializeComponent();
-
-            //MainPage = new MainPage();
-            MainPage = new NumberPage();
-            //MainPage = new StartPage();
+            InitializeComponent();           
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()

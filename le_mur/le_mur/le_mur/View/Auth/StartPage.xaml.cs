@@ -16,7 +16,8 @@ namespace le_mur.View.Auth
         public StartPage()
         {
             InitializeComponent();
-            this.BindingContext = new StartViewModel() { };
+            NavigationPage.SetHasNavigationBar(this, false);
+            this.BindingContext = new StartViewModel() { Navigation = this.Navigation };
         }
     }
 }

@@ -1,12 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="le_mur.View.Auth.CodePage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+             x:Class="le_mur.View.Auth.CodePage"
+             xmlns:local="clr-namespace:le_mur.View.Auth;assembly=le_mur" 
+             Background="#FFF7F7">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="1"
+               Text="Введите код подтверждения" 
+               FontSize="24" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontFamily="Montsserat"
+               FontAttributes="Bold"
+               TextColor="#18191F" />
+
+        <StackLayout Grid.Row="2" 
+                     Orientation="Horizontal" 
+                     HorizontalOptions="Center" 
+                     VerticalOptions="Start">
+
+            <local:CustomEntry x:Name="entry0" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8"
+                   Text="{Binding Code0}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
+                <Entry.Behaviors>
+                    <local:FocusEntryBehavior />
+                </Entry.Behaviors>
+            </local:CustomEntry>
+            
+            <local:CustomEntry x:Name="entry1" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+                   Text="{Binding Code1}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
+                <Entry.Behaviors>
+                    <local:FocusEntryBehavior />
+                </Entry.Behaviors>
+            </local:CustomEntry>
+            
+            <local:CustomEntry x:Name="entry2" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+                   Text="{Binding Code2}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
+                <Entry.Behaviors>
+                    <local:FocusEntryBehavior />
+                </Entry.Behaviors>
+            </local:CustomEntry>
+            
+            <local:CustomEntry x:Name="entry3" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+                   Text="{Binding Code3}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
+                <Entry.Behaviors>
+                    <local:FocusEntryBehavior />
+                </Entry.Behaviors>
+            </local:CustomEntry>
+            
+            <local:CustomEntry x:Name="entry4" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+                   Text="{Binding Code4}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
+                <Entry.Behaviors>
+                    <local:FocusEntryBehavior />
+                </Entry.Behaviors>
+            </local:CustomEntry>
         </StackLayout>
-    </ContentPage.Content>
+
+        <Button Grid.Row="3"
+            Command="{Binding SendCodeCommand}"
+            Text="Продолжить" 
+            TextColor="white" 
+            FontFamily="Montsserat"
+            FontAttributes="Bold"
+            BackgroundColor="#F86E6E"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Padding="30,20,30,20"
+            CornerRadius="15" />
+    </Grid>
 </ContentPage>

@@ -4,12 +4,14 @@ using le_mur.Consts;
 using Xamarin.Forms;
 using System.Text.RegularExpressions;
 using le_mur.Helpers;
+using le_mur.View.Auth;
 
 namespace le_mur.ViewModel.Auth
 {
     public class NumberViewModel : BaseViewModel
     {
         public Command SendNumberCommand { get; }
+        public INavigation Navigation { get; set; }
 
         public NumberViewModel()
         {
@@ -66,9 +68,9 @@ namespace le_mur.ViewModel.Auth
                 AuthStatus status = await TelegramApi.CheckAuth(phoneNumber);
                 switch (status)
                 {
-                    case AuthStatus.Ok: /*открыть окно каналов*/ break;
-                    case AuthStatus.NeedAuth: /*открыть окно телефона*/ break;
-                    case AuthStatus.NeedCode: /*открыть окно кода*/ break;
+                    case AuthStatus.Ok: /*открыть каналы*/ break;
+                    case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
+                    case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(phoneNumber)); break;
                 }
             }
         }

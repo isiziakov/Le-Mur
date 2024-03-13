@@ -16,7 +16,8 @@ namespace le_mur.View.Auth
         public NumberPage()
         {
             InitializeComponent();
-            this.BindingContext = new NumberViewModel() { };
+            NavigationPage.SetHasNavigationBar(this, false);
+            this.BindingContext = new NumberViewModel() { Navigation = this.Navigation };
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using le_mur.Consts;
+using le_mur.Helpers;
 using le_mur.NetworkCalling;
+using le_mur.View.Auth;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -11,6 +13,8 @@ namespace le_mur.ViewModel.Auth
 {
     public class StartViewModel : BaseViewModel 
     {
+        public INavigation Navigation { get; set; }
+
         public StartViewModel()
         {
             Auth();
@@ -30,17 +34,18 @@ namespace le_mur.ViewModel.Auth
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 status = AuthStatus.NeedAuth;
+                PreferencesHelper.SetPhoneNumber("");
             }
             stopwatch.Stop();
             TimeSpan elapsedTime = stopwatch.Elapsed;
-            if (elapsedTime < TimeSpan.FromSeconds(2))
-                await Task.Delay(TimeSpan.FromSeconds(2) - elapsedTime);
+            if (elapsedTime < TimeSpan.FromSeconds(3.5))
+                await Task.Delay(TimeSpan.FromSeconds(3.5) - elapsedTime);
 
             switch (status)
             {
                 case AuthStatus.Ok: /*открыть окно каналов*/ break;
-                case AuthStatus.NeedAuth: /*открыть окно телефона*/ break;
-                case AuthStatus.NeedCode: /*открыть окно кода*/ break;
+                case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
+                case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(PreferencesHelper.GetPhoneNumber())); break;
             }
         }
     }
