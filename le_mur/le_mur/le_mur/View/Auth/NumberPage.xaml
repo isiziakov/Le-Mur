@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="le_mur.View.Auth.NumberPage"
+             Background="#FFF7F7">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="1"
+            Text="Введите ваш номер телефона!" 
+            FontSize="24" 
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontFamily="Montsserat"
+            FontAttributes="Bold"
+            TextColor="#18191F" />
+
+        <StackLayout Grid.Row="2" 
+                     Orientation="Horizontal" 
+                     HorizontalOptions="CenterAndExpand" 
+                     VerticalOptions="Start" >
+            <Label 
+                Text="+7 " 
+                TextColor="#18191F" 
+                FontSize="24" 
+                FontAttributes="Bold"
+                VerticalOptions="Center"
+                FontFamily="Montsserat" />
+
+            <Entry
+                Text="{Binding Number}" 
+                Keyboard="Numeric"
+                BackgroundColor="Transparent"
+                TextColor="#18191F" 
+                PlaceholderColor="Black" 
+                HorizontalTextAlignment="Center"
+                Placeholder = "--- --- -- --"
+                MaxLength="13"
+                WidthRequest = "200"
+                FontSize="24" 
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand"
+                FontAttributes="Bold"
+                FontFamily="Montsserat"/>
+        </StackLayout>
+
+        <Button Grid.Row="3"
+                Command="{Binding SendNumberCommand}"
+                Text="Продолжить" 
+                TextColor="white" 
+                FontFamily="Montsserat"
+                FontAttributes="Bold"
+                BackgroundColor="#F86E6E"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                Padding="30,20,30,20"
+                CornerRadius="15" />
+    </Grid>
+</ContentPage>

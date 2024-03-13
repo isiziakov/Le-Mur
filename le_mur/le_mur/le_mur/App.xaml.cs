@@ -1,7 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using le_mur.View;
+using le_mur.View.Auth;
+using le_mur.Helpers;
 
 namespace le_mur
 {
@@ -10,9 +11,7 @@ namespace le_mur
         public App()
         {
             InitializeComponent();
-
-            //MainPage = new MainPage();
-            MainPage = new AuthPage();
+            MainPage = new NavigationPage(new StartPage());
         }
 
         protected override void OnStart()
