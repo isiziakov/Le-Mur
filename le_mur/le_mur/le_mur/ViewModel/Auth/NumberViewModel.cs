@@ -23,16 +23,35 @@ namespace le_mur.ViewModel.Auth
             set
             {
                 string phoneNumber = Regex.Replace(value, "[^0-9]", "");
-                string formattedPhoneNumber = "";
-                for (int i = 0; i < phoneNumber.Length && i <= 10; i++)
+                string pattern = "", replacement = "";
+                switch (phoneNumber.Length)
                 {
-                    if (i == 3 || i == 6 || i == 8)
-                        formattedPhoneNumber += "-";
-                    formattedPhoneNumber += phoneNumber[i];
+                    case 0: case 1: case 2: case 3:
+                        pattern = @"(\d{1,3})?";
+                        replacement = @"$1";
+                        break;
+                    case 4: case 5: case 6:
+                        pattern = @"(\d{3})(\d{1,3})";
+                        replacement = @"$1-$2";
+                        break;
+                    case 7: case 8:
+                        pattern = @"(\d{3})(\d{3})(\d{1,2})";
+                        replacement = @"$1-$2-$3";
+                        break;
+                    case 9: case 10:
+                        pattern = @"(\d{3})(\d{3})(\d{2})(\d{1,2})";
+                        replacement = @"$1-$2-$3-$4";
+                        break;
+                    default:
+                        pattern = @"(\d{3})(\d{3})(\d{2})(\d{2})(\d{1,}?)";
+                        replacement = @"$1-$2-$3-$4";
+                        break;
                 }
-                if (number != formattedPhoneNumber)
+                Regex regex = new Regex(pattern);
+                string result = regex.Replace(phoneNumber, replacement);
+                if (number != result)
                 {
-                    number = formattedPhoneNumber;
+                    number = result;
                     OnPropertyChanged("Number");
                 }
             }
