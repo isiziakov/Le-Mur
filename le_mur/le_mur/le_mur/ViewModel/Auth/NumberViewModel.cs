@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using System.Text.RegularExpressions;
 using le_mur.Helpers;
 using le_mur.View.Auth;
+using le_mur.View;
 
 namespace le_mur.ViewModel.Auth
 {
@@ -68,7 +69,7 @@ namespace le_mur.ViewModel.Auth
                 AuthStatus status = await TelegramApi.CheckAuth(phoneNumber);
                 switch (status)
                 {
-                    case AuthStatus.Ok: /*открыть каналы*/ break;
+                    case AuthStatus.Ok: await Navigation.PushAsync(new ChanelsPage()); break;
                     case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
                     case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(phoneNumber)); break;
                 }

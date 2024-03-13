@@ -1,6 +1,7 @@
 ﻿using le_mur.Consts;
 using le_mur.Helpers;
 using le_mur.NetworkCalling;
+using le_mur.View;
 using le_mur.View.Auth;
 using System;
 using System.Collections.Generic;
@@ -38,12 +39,11 @@ namespace le_mur.ViewModel.Auth
             }
             stopwatch.Stop();
             TimeSpan elapsedTime = stopwatch.Elapsed;
-            if (elapsedTime < TimeSpan.FromSeconds(3.5))
-                await Task.Delay(TimeSpan.FromSeconds(3.5) - elapsedTime);
-
+            if (elapsedTime < TimeSpan.FromSeconds(3))
+                await Task.Delay(TimeSpan.FromSeconds(3) - elapsedTime);
             switch (status)
             {
-                case AuthStatus.Ok: /*открыть окно каналов*/ break;
+                case AuthStatus.Ok: await Navigation.PushAsync(new ChanelsPage()); break;
                 case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
                 case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(PreferencesHelper.GetPhoneNumber())); break;
             }

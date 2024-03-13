@@ -28,35 +28,35 @@
                      HorizontalOptions="Center" 
                      VerticalOptions="Start">
 
-            <local:CustomEntry x:Name="entry0" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8"
+            <local:CustomEntry x:Name="entry0" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" FontSize="24" FontAttributes="Bold"
                    Text="{Binding Code0}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
                 <Entry.Behaviors>
                     <local:FocusEntryBehavior />
                 </Entry.Behaviors>
             </local:CustomEntry>
-            
-            <local:CustomEntry x:Name="entry1" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+
+            <local:CustomEntry x:Name="entry1" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" FontSize="24" FontAttributes="Bold"
                    Text="{Binding Code1}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
                 <Entry.Behaviors>
                     <local:FocusEntryBehavior />
                 </Entry.Behaviors>
             </local:CustomEntry>
-            
-            <local:CustomEntry x:Name="entry2" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+
+            <local:CustomEntry x:Name="entry2" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" FontSize="24" FontAttributes="Bold"
                    Text="{Binding Code2}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
                 <Entry.Behaviors>
                     <local:FocusEntryBehavior />
                 </Entry.Behaviors>
             </local:CustomEntry>
-            
-            <local:CustomEntry x:Name="entry3" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+
+            <local:CustomEntry x:Name="entry3" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" FontSize="24" FontAttributes="Bold"
                    Text="{Binding Code3}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
                 <Entry.Behaviors>
                     <local:FocusEntryBehavior />
                 </Entry.Behaviors>
             </local:CustomEntry>
-            
-            <local:CustomEntry x:Name="entry4" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" 
+
+            <local:CustomEntry x:Name="entry4" Keyboard="Numeric" MaxLength="1" WidthRequest="40" BackgroundColor="#E8E8E8" FontSize="24" FontAttributes="Bold"
                    Text="{Binding Code4}" HorizontalTextAlignment="Center" BorderWidth="4" BorderColor="#18191F" TextColor="#18191F">
                 <Entry.Behaviors>
                     <local:FocusEntryBehavior />

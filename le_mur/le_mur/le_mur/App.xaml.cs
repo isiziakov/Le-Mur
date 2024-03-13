@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using le_mur.View.Auth;
+using le_mur.Helpers;
 
 namespace le_mur
 {
@@ -9,7 +10,7 @@ namespace le_mur
     {
         public App()
         {
-            InitializeComponent();           
+            InitializeComponent();
             MainPage = new NavigationPage(new StartPage());
         }
 

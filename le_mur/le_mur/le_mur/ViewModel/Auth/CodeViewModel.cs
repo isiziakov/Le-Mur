@@ -1,6 +1,7 @@
 ﻿using le_mur.Consts;
 using le_mur.Helpers;
 using le_mur.NetworkCalling;
+using le_mur.View;
 using le_mur.View.Auth;
 using System;
 using System.Collections.Generic;
@@ -91,7 +92,7 @@ namespace le_mur.ViewModel.Auth
             AuthStatus status = await TelegramApi.Auth(code);
             switch (status)
             {
-                case AuthStatus.Ok: PreferencesHelper.SetPhoneNumber(_number); break;
+                case AuthStatus.Ok: PreferencesHelper.SetPhoneNumber(_number); await Navigation.PushAsync(new ChanelsPage()); break;
                 case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
                 case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(_number)); break;
             }
