@@ -12,7 +12,8 @@ namespace le_mur
             InitializeComponent();
 
             //MainPage = new MainPage();
-            MainPage = new StartPage();
+            MainPage = new NumberPage();
+            //MainPage = new StartPage();
         }
 
         protected override void OnStart()

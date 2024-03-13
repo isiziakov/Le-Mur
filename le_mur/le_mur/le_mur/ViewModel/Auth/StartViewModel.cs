@@ -2,7 +2,9 @@
 using le_mur.NetworkCalling;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace le_mur.ViewModel.Auth
@@ -17,6 +19,9 @@ namespace le_mur.ViewModel.Auth
         private async void Auth()
         {
             AuthStatus status;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             try
             {
                 status = await TelegramApi.CheckAuth();
@@ -26,6 +31,10 @@ namespace le_mur.ViewModel.Auth
                 Console.WriteLine($"An error occurred: {ex.Message}");
                 status = AuthStatus.NeedAuth;
             }
+            stopwatch.Stop();
+            TimeSpan elapsedTime = stopwatch.Elapsed;
+            if (elapsedTime < TimeSpan.FromSeconds(2))
+                await Task.Delay(TimeSpan.FromSeconds(2) - elapsedTime);
 
             switch (status)
             {
