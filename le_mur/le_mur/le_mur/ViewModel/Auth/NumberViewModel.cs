@@ -69,7 +69,7 @@ namespace le_mur.ViewModel.Auth
                 AuthStatus status = await TelegramApi.CheckAuth(phoneNumber);
                 switch (status)
                 {
-                    case AuthStatus.Ok: await Navigation.PushAsync(new ChanelsPage()); break;
+                    case AuthStatus.Ok: await Navigation.PushAsync(new ChannelsPage()); break;
                     case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
                     case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(phoneNumber)); break;
                 }

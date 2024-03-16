@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             x:Class="le_mur.View.ChanelsPage"
+             x:Class="le_mur.View.ChannelsPage"
              xmlns:vm="clr-namespace:le_mur"
              Background="White">
     
@@ -24,7 +24,7 @@
                 <Frame HasShadow="False" CornerRadius="8" BackgroundColor="White" Padding="10,5">
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                         <Image Source="search.png" WidthRequest="30"/>
-                        <Entry Placeholder="Search" HorizontalOptions="FillAndExpand" Text="{Binding SearchRequest}"/>
+                        <Entry Placeholder="Search" HorizontalOptions="FillAndExpand" Text="{Binding SearchRequest}" PlaceholderColor="Gray" TextColor="Black"/>
                         <Image Source="tools.png" WidthRequest="30">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ToolsCommand}"/>
@@ -127,6 +127,10 @@
                                                 <Label Margin="15,0" Grid.Column="1" VerticalOptions="Center" Text="{Binding Title}" FontFamily="MontsseratMedium" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
                                                 <Image Source="greenCheck.png" WidthRequest="50" Grid.Column="2"></Image>
                                             </Grid>
+                                            
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={x:Reference channelsList}, Path=BindingContext.ChatCommand}" CommandParameter="{Binding }"/>
+                                            </Frame.GestureRecognizers>
                                         </Frame>
                                     </Frame>
                                 </StackLayout>
