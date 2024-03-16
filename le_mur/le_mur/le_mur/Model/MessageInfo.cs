@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using Xamarin.Forms;
 
 namespace le_mur.Model
 {
@@ -8,7 +10,7 @@ namespace le_mur.Model
     {
         public int Id;
         public string Text;
-        public List<byte[]> images = new List<byte[]>();
+        public List<ImageSource> Images = new List<ImageSource>();
         public long GroupId;
 
         public MessageInfo(int id, string text, long groupId)
@@ -16,6 +18,11 @@ namespace le_mur.Model
             Id = id;
             Text = text;
             GroupId = groupId;
+        }
+
+        public void AddImage(byte[] image)
+        {
+            Images.Add(ImageSource.FromStream(() => new MemoryStream(image)));
         }
     }
 }

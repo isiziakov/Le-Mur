@@ -47,21 +47,36 @@ namespace le_mur.NetworkCalling
             }
         }
 
-        static async public Task<List<string>> GetChatsTitles() // Depricated
-        {
-            var res = await client.Messages_GetAllChats();
-            return res.chats.Select(i => i.Value.Title).ToList();
-        }
-
         static async public Task<List<ChatInfo>> GetChatsInfo()
         {
             var chats = new List<ChatInfo>();
+            var chatsPhoto = new List<IPeerInfo>();
             var res = await client.Messages_GetAllChats();
             foreach (var chat in res.chats)
             {
-                chats.Add(new ChatInfo(chat.Value, chat.Value.Title, await GetChatPhoto(chat.Value)));
+                chats.Add(new ChatInfo(chat.Value, chat.Value.Title));
+                chatsPhoto.Add(chat.Value);
+            }
+            var images = await GetChatPhotos(chatsPhoto);
+            for (int i = 0; i < images.Count(); i++)
+            {
+                chats[i].SetImage(images[i].Result);
             }
             return chats;
+        }
+
+        static async public Task<List<Task<byte[]>>> GetChatPhotos(List<IPeerInfo> peer)
+        {
+            var tasks = new List<Task<byte[]>>();
+            foreach (var peerInfo in peer)
+            {
+                tasks.Add(GetChatPhoto(peerInfo));
+            }
+            foreach (var task in tasks)
+            {
+                await task;
+            }
+            return tasks;
         }
 
         static async public Task<byte[]> GetChatPhoto(IPeerInfo peer)
@@ -73,6 +88,7 @@ namespace le_mur.NetworkCalling
 
         static async public Task<List<MessageInfo>> GetMessages(InputPeer peer, int offsetId = 0)
         {
+            var images = new List<Tuple<int, Photo>>();
             var res = new List<MessageInfo>();
             var msgs = await getMessages(peer, offsetId);
             foreach (var msg in msgs.Messages)
@@ -97,7 +113,7 @@ namespace le_mur.NetworkCalling
                         var media = message.media as MessageMediaPhoto;
                         if (media.photo is Photo)
                         {
-                            res.Last().images.Add(await GetImage(media.photo as Photo));
+                            images.Add(new Tuple<int, Photo>(res.Count, media.photo as Photo));
                         }
                     }
                 }
@@ -125,14 +141,33 @@ namespace le_mur.NetworkCalling
                                 var media = message.media as MessageMediaPhoto;
                                 if (media.photo is Photo)
                                 {
-                                    res.Last().images.Add(await GetImage(media.photo as Photo));
+                                    images.Add(new Tuple<int, Photo>(res.Count, media.photo as Photo));
                                 }
                             }
                         }
                     }
                 }
             }
+            var imagesSource = await GetImages(images);
+            foreach (var image in imagesSource)
+            {
+                res[image.Item1].AddImage(image.Item2.Result);
+            }
             return res;
+        }
+
+        static async public Task<List<Tuple<int, Task<byte[]>>>> GetImages(List<Tuple<int, Photo>> photos)
+        {
+            var tasks = new List<Tuple<int, Task<byte[]>>>();
+            foreach (var photo in photos)
+            {
+                tasks.Add(new Tuple<int, Task<byte[]>>(photo.Item1, GetImage(photo.Item2)));
+            }
+            foreach (var task in tasks)
+            {
+                await task.Item2;
+            }
+            return tasks;
         }
 
         static async public Task<byte[]> GetImage(Photo photo)
