@@ -105,7 +105,7 @@ namespace le_mur.NetworkCalling
                     }
                     else
                     {
-                        res.Add(new MessageInfo(message.ID, message.message, message.grouped_id));
+                        res.Add(new MessageInfo(message.ID, message.message, message.grouped_id, message.date));
                     }
                     
                     if (message.media is MessageMediaPhoto)

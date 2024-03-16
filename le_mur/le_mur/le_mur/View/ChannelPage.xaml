@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:vm="clr-namespace:le_mur"
+             x:Class="le_mur.View.ChannelPage"
+             Background="white">
+
+    <StackLayout>
+        <ListView x:Name="messagesList" ItemsSource="{Binding Messages}" HasUnevenRows="True" SelectionMode="None" Margin="5,5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Frame HasShadow="False" CornerRadius="5" Padding="2,2,2,10" BackgroundColor="black" Margin="0,0,0,10">
+                                <Frame HasShadow="False" CornerRadius="3" BackgroundColor="White" Padding="0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout Orientation="Horizontal" Padding="5, 5, 5, 5" Grid.Row="0">
+                                            <CI:CircleImage Source="{Binding Source={x:Reference messagesList}, Path=BindingContext.SelectedChat.Image}" WidthRequest="50"/>
+                                            <StackLayout>
+                                                <Label VerticalOptions="Center" Text="{Binding Source={x:Reference messagesList}, Path=BindingContext.SelectedChat.Title}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                                <Label VerticalOptions="Center" Text="{Binding Date}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="12" TextColor="Gray"/>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <Label TextColor="Black" Text="{Binding Text}" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" Margin="5,0" Grid.Row="1"/>
+
+                                        <CarouselView ItemsSource="{Binding Images}" Margin="5,0" Grid.Row="2" HeightRequest="{Binding Height}">
+                                            <CarouselView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame HasShadow="False" Padding="0">
+                                                        <Image Source="{Binding }" HorizontalOptions="FillAndExpand"/>
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </CarouselView.ItemTemplate>
+                                        </CarouselView>
+
+                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black" Margin="10" HorizontalOptions="End" Grid.Row="3">
+                                            <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
+                                                <Image Source="favourites.png" WidthRequest="20">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference messagesList}, Path=BindingContext.FavouritesCommand}" CommandParameter="{Binding Id}"/>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Frame>
+                                        </Frame>
+                                        
+                                    </Grid>
+                                </Frame>
+                            </Frame>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
