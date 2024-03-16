@@ -113,7 +113,7 @@ namespace le_mur.NetworkCalling
                         var media = message.media as MessageMediaPhoto;
                         if (media.photo is Photo)
                         {
-                            images.Add(new Tuple<int, Photo>(res.Count, media.photo as Photo));
+                            images.Add(new Tuple<int, Photo>(res.Count - 1, media.photo as Photo));
                         }
                     }
                 }
@@ -141,7 +141,7 @@ namespace le_mur.NetworkCalling
                                 var media = message.media as MessageMediaPhoto;
                                 if (media.photo is Photo)
                                 {
-                                    images.Add(new Tuple<int, Photo>(res.Count, media.photo as Photo));
+                                    images.Add(new Tuple<int, Photo>(res.Count - 1, media.photo as Photo));
                                 }
                             }
                         }
