@@ -25,7 +25,7 @@ namespace le_mur.NetworkCalling.MediaTypes
             set
             {
                 filename = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged("Filename");
             }
         }
 
@@ -35,7 +35,7 @@ namespace le_mur.NetworkCalling.MediaTypes
             set
             {
                 data = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged("Data");
             }
         }
 
@@ -45,7 +45,7 @@ namespace le_mur.NetworkCalling.MediaTypes
             set
             {
                 document = value;
-                OnPropertyChanged("Title");
+                OnPropertyChanged("Document");
             }
         }
 

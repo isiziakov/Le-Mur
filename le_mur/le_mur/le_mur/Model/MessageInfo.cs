@@ -1,4 +1,5 @@
 ﻿using le_mur.Helpers;
+using le_mur.NetworkCalling.MediaTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace le_mur.Model
         int id;
         string text;
         List<ImageSource> images;
+        List<MediaInfo> media;
         long groupId;
         int height;
         DateTime date;
@@ -47,6 +49,16 @@ namespace le_mur.Model
             {
                 images = value;
                 OnPropertyChanged("Images");
+            }
+        }
+
+        public List<MediaInfo> Media
+        {
+            get { return media; }
+            set
+            {
+                media = value;
+                OnPropertyChanged("Media");
             }
         }
 
