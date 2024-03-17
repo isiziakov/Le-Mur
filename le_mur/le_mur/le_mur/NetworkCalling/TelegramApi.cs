@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using le_mur.Consts;
 using le_mur.Helpers;
 using le_mur.Model;
+using le_mur.NetworkCalling.MediaTypes;
 using TL;
 
 namespace le_mur.NetworkCalling
@@ -116,6 +117,22 @@ namespace le_mur.NetworkCalling
                             images.Add(new Tuple<int, Photo>(res.Count - 1, media.photo as Photo));
                         }
                     }
+                    if (message.media is MessageMediaDocument)
+                    {
+                        var media = message.media as MessageMediaDocument;
+                        if (media.document is Document)
+                        {
+                            var doc = media.document as Document;
+                            if (doc.mime_type.IndexOf("video") > -1)
+                            {
+                                res.Last().Media.Add(new VideoInfo(doc.Filename, doc));
+                            }
+                            else
+                            {
+                                res.Last().Media.Add(new MediaInfo(doc.Filename, doc));
+                            }
+                        }
+                    }
                 }
             }
             if (res.Count > 0 && res.Last().GroupId != 0)
@@ -174,6 +191,13 @@ namespace le_mur.NetworkCalling
         {
             MemoryStream ms = new MemoryStream();
             await client.DownloadFileAsync(photo, ms);
+            return ms.ToArray();
+        }
+
+        static async public Task<byte[]> GetDocument(Document document)
+        {
+            MemoryStream ms = new MemoryStream();
+            await client.DownloadFileAsync(document, ms);
             return ms.ToArray();
         }
 
