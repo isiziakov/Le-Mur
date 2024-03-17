@@ -7,8 +7,9 @@ namespace le_mur.NetworkCalling.MediaTypes
 {
     public class VideoInfo : MediaInfo
     {
-        public VideoInfo(string filename, Document document) 
+        public VideoInfo(string filename, Document document) : base(filename, document)
         { 
+
         }
     }
 }
