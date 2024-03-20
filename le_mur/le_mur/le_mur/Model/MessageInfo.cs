@@ -17,10 +17,13 @@ namespace le_mur.Model
         int id;
         string text;
         List<ImageSource> images;
+        List<Photo> imagesLinks;
         List<MediaInfo> media;
         long groupId;
         int height;
         DateTime date;
+
+        public InputPeer ChatId;
 
         public int Id
         {
@@ -49,6 +52,16 @@ namespace le_mur.Model
             {
                 images = value;
                 OnPropertyChanged("Images");
+            }
+        }
+
+        public List<Photo> ImagesLinks
+        {
+            get { return imagesLinks; }
+            set
+            {
+                imagesLinks = value;
+                OnPropertyChanged("ImagesLinks");
             }
         }
 
@@ -98,14 +111,16 @@ namespace le_mur.Model
             }
         }
 
-        public MessageInfo(int id, string text, long groupId, DateTime date)
+        public MessageInfo(int id, string text, long groupId, DateTime date, InputPeer chatId)
         {
             Id = id;
             Text = text;
             GroupId = groupId;
             Images = new List<ImageSource>();
+            ImagesLinks = new List<Photo>();
             Height = 0;
             Date = date;
+            ChatId = chatId;
         }
 
         public void AddImage(byte[] image)

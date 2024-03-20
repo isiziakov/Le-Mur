@@ -87,9 +87,8 @@ namespace le_mur.NetworkCalling
             return ms.ToArray();
         }
 
-        static async public Task<List<MessageInfo>> GetMessages(InputPeer peer, int offsetId = 0)
+        static async public Task<List<MessageInfo>> GetMessages(InputPeer peer, int offsetId = 0, bool loadImages = true)
         {
-            var images = new List<Tuple<int, Photo>>();
             var res = new List<MessageInfo>();
             var msgs = await getMessages(peer, offsetId);
             foreach (var msg in msgs.Messages)
@@ -106,7 +105,7 @@ namespace le_mur.NetworkCalling
                     }
                     else
                     {
-                        res.Add(new MessageInfo(message.ID, message.message, message.grouped_id, message.date));
+                        res.Add(new MessageInfo(message.ID, message.message, message.grouped_id, message.date, peer));
                     }
                     
                     if (message.media is MessageMediaPhoto)
@@ -114,7 +113,7 @@ namespace le_mur.NetworkCalling
                         var media = message.media as MessageMediaPhoto;
                         if (media.photo is Photo)
                         {
-                            images.Add(new Tuple<int, Photo>(res.Count - 1, media.photo as Photo));
+                            res.Last().ImagesLinks.Add(media.photo as Photo);
                         }
                     }
                     if (message.media is MessageMediaDocument)
@@ -158,33 +157,61 @@ namespace le_mur.NetworkCalling
                                 var media = message.media as MessageMediaPhoto;
                                 if (media.photo is Photo)
                                 {
-                                    images.Add(new Tuple<int, Photo>(res.Count - 1, media.photo as Photo));
+                                    res.Last().ImagesLinks.Add(media.photo as Photo);
                                 }
                             }
                         }
                     }
                 }
             }
-            var imagesSource = await GetImages(images);
-            foreach (var image in imagesSource)
-            {
-                res[image.Item1].AddImage(image.Item2.Result);
-            }
+
+            if (loadImages)
+                await GetImages(res);
+            
             return res;
         }
 
-        static async public Task<List<Tuple<int, Task<byte[]>>>> GetImages(List<Tuple<int, Photo>> photos)
+        static async Task GetCustomWall(CustomWallInfo wallInfo)
+        {
+            wallInfo.Messages.Clear();
+            var bufferMessages = new List<MessageInfo>();
+            foreach (var chat in wallInfo.ChatInfos)
+            {
+                bufferMessages.AddRange(await GetMessages(chat.Item1.Id, chat.Item2, false));
+            }
+            wallInfo.Messages.AddRange(bufferMessages.OrderByDescending(i => i.Date).ToList().GetRange(0, 100));
+            await GetImages(wallInfo.Messages);
+            for (int i = 0; i < wallInfo.ChatInfos.Count; i++)
+            {
+                var offset = 0;
+                var msgs = wallInfo.Messages.Where(m => m.ChatId == wallInfo.ChatInfos[i].Item1.Id).ToList();
+                if (msgs.Count > 0)
+                {
+                    offset = msgs.OrderBy(m => m.Id).Last().Id;
+                }
+                wallInfo.ChatInfos[i] = new Tuple<ChatInfo, int>(wallInfo.ChatInfos[i].Item1, offset);
+            }
+        }
+
+        static async public Task GetImages(List<MessageInfo> messages)
         {
             var tasks = new List<Tuple<int, Task<byte[]>>>();
-            foreach (var photo in photos)
+            for (int i = 0; i < messages.Count; i++)
             {
-                tasks.Add(new Tuple<int, Task<byte[]>>(photo.Item1, GetImage(photo.Item2)));
+                foreach (var image in messages[i].ImagesLinks)
+                {
+                    tasks.Add(new Tuple<int, Task<byte[]>>(i, GetImage(image)));
+                }
             }
             foreach (var task in tasks)
             {
                 await task.Item2;
             }
-            return tasks;
+            foreach (var task in tasks)
+            {
+                messages[task.Item1].AddImage(task.Item2.Result);
+            }
+            return;
         }
 
         static async public Task<byte[]> GetImage(Photo photo)
