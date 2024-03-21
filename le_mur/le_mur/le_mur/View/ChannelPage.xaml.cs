@@ -16,8 +16,22 @@ namespace le_mur.View
         public ChannelPage(ChatInfo chat)
         {
             InitializeComponent();
+            this.Appearing += ChannelPage_Appearing;
             NavigationPage.SetHasNavigationBar(this, false);
             this.BindingContext = new ChannelViewModel(chat) { Navigation = this.Navigation };
+        }
+
+        private void ChannelPage_Appearing(object sender, EventArgs e)
+        {
+            this.messagesList.ItemAppearing += OnItemAppearing;
+        }
+
+        private void OnItemAppearing(object sender, ItemVisibilityEventArgs e)
+        {
+            if (e.Item == ((ChannelViewModel)BindingContext).Messages.Last())
+            {
+                ((ChannelViewModel)BindingContext).GetMessages(((ChannelViewModel)BindingContext).Messages.Last().Id);
+            }
         }
     }
 }

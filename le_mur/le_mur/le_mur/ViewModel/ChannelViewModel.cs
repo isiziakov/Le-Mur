@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using le_mur.Model;
 using TL;
 using le_mur.NetworkCalling;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace le_mur.ViewModel
 {
@@ -47,13 +49,15 @@ namespace le_mur.ViewModel
 
             FavouritesCommand = new Command(OnFavouritesCommand);
 
-            GetMessages();
+            GetMessages(0);
         }
 
-        private async void GetMessages()
+        public async void GetMessages(int id)
         {
-            var list = await TelegramApi.GetMessages(SelectedChat.Id);
-            Messages = new ObservableCollection<MessageInfo>(list);
+            var newMessages = await TelegramApi.GetMessages(SelectedChat.Id, id);
+            var allMessages = Messages.ToList();
+            allMessages.AddRange(newMessages);
+            Messages = new ObservableCollection<MessageInfo>(allMessages);
         }
 
         private void OnFavouritesCommand(object obj)
