@@ -132,6 +132,7 @@ namespace le_mur.NetworkCalling
                             }
                         }
                     }
+                    res.Last().Id = message.id;
                 }
             }
             if (res.Count > 0 && res.Last().GroupId != 0)
@@ -161,6 +162,7 @@ namespace le_mur.NetworkCalling
                                 }
                             }
                         }
+                        res.Last().Id = message.id;
                     }
                 }
             }
