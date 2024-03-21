@@ -53,7 +53,7 @@ namespace le_mur.NetworkCalling
             var chats = new List<ChatInfo>();
             var chatsPhoto = new List<IPeerInfo>();
             var res = await client.Messages_GetAllChats();
-            foreach (var chat in res.chats)
+            foreach (var chat in res.chats.Where(i => i.Value.IsChannel && i.Value.IsActive && ((i.Value as Channel).username != null || (i.Value as Channel).usernames != null)).ToList())
             {
                 chats.Add(new ChatInfo(chat.Value, chat.Value.Title));
                 chatsPhoto.Add(chat.Value);
