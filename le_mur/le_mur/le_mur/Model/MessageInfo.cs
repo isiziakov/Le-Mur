@@ -118,6 +118,7 @@ namespace le_mur.Model
             GroupId = groupId;
             Images = new List<ImageSource>();
             ImagesLinks = new List<Photo>();
+            Media = new List<MediaInfo>();
             Height = 0;
             Date = date;
             ChatId = chatId;
