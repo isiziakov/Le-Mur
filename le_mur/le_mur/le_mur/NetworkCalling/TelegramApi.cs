@@ -22,6 +22,7 @@ namespace le_mur.NetworkCalling
             client = new WTelegram.Client(apiId, apiHash, path);
         }
 
+        #region Authorization
         static async public Task<AuthStatus> CheckAuth()
         {
             PreferencesHelper.SetPhoneNumber(LocalConsts.phone);
@@ -47,7 +48,9 @@ namespace le_mur.NetworkCalling
                 default: return AuthStatus.NeedAuth;
             }
         }
+        #endregion
 
+        #region GetChatsList
         static async public Task<List<ChatInfo>> GetChatsInfo()
         {
             var chats = new List<ChatInfo>();
@@ -65,7 +68,9 @@ namespace le_mur.NetworkCalling
             }
             return chats;
         }
+        #endregion
 
+        #region GetChatPhotos
         static async public Task<List<Task<byte[]>>> GetChatPhotos(List<IPeerInfo> peer)
         {
             var tasks = new List<Task<byte[]>>();
@@ -86,7 +91,9 @@ namespace le_mur.NetworkCalling
             await client.DownloadProfilePhotoAsync(peer, ms);
             return ms.ToArray();
         }
+        #endregion
 
+        #region GetMessagesForChat
         static async public Task<List<MessageInfo>> GetMessages(InputPeer peer, int offsetId = 0, bool loadImages = true)
         {
             var res = new List<MessageInfo>();
@@ -173,6 +180,13 @@ namespace le_mur.NetworkCalling
             return res;
         }
 
+        static async public Task<Messages_MessagesBase> getMessages(InputPeer peer, int offsetId)
+        {
+            return await client.Messages_GetHistory(peer, offsetId);
+        }
+        #endregion
+
+        #region GetCustomWall
         static async Task GetCustomWall(CustomWallInfo wallInfo)
         {
             wallInfo.Messages.Clear();
@@ -194,7 +208,9 @@ namespace le_mur.NetworkCalling
                 wallInfo.ChatInfos[i] = new Tuple<ChatInfo, int>(wallInfo.ChatInfos[i].Item1, offset);
             }
         }
+        #endregion
 
+        #region GetImagesForMessagesList
         static async public Task GetImages(List<MessageInfo> messages)
         {
             var tasks = new List<Tuple<int, Task<byte[]>>>();
@@ -222,17 +238,15 @@ namespace le_mur.NetworkCalling
             await client.DownloadFileAsync(photo, ms);
             return ms.ToArray();
         }
+        #endregion
 
+        #region GetDocument
         static async public Task<byte[]> GetDocument(Document document)
         {
             MemoryStream ms = new MemoryStream();
             await client.DownloadFileAsync(document, ms);
             return ms.ToArray();
         }
-
-        static async public Task<Messages_MessagesBase> getMessages(InputPeer peer, int offsetId)
-        {
-            return await client.Messages_GetHistory(peer, offsetId);
-        }
+        #endregion
     }
 }
