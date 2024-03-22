@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading.Tasks;
 using TL;
 
 namespace le_mur.NetworkCalling.MediaTypes
@@ -11,7 +12,7 @@ namespace le_mur.NetworkCalling.MediaTypes
     public class MediaInfo : INotifyPropertyChanged
     {
         protected string filename;
-        protected Stream data;
+        protected byte[] data;
         protected Document document;
 
         public MediaInfo(string filename, Document document)
@@ -29,7 +30,7 @@ namespace le_mur.NetworkCalling.MediaTypes
             }
         }
 
-        public Stream Data
+        public byte[] Data
         {
             get { return data; }
             set
@@ -47,6 +48,22 @@ namespace le_mur.NetworkCalling.MediaTypes
                 document = value;
                 OnPropertyChanged("Document");
             }
+        }
+
+        public async Task<byte[]> GetFile()
+        {
+            if (data != null)
+                return data;
+
+            if (File.Exists(TelegramApi.filesPath + "/" + filename))
+            {
+                data = File.ReadAllBytes(TelegramApi.filesPath + "/" + filename);
+                return data;
+            }
+
+            data = await TelegramApi.GetDocument(document);
+            File.WriteAllBytes(TelegramApi.filesPath + "/" + filename, data);
+            return data;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
