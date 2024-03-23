@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             xmlns:vm="clr-namespace:le_mur"
+             xmlns:vm="clr-namespace:le_mur" 
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
              x:Class="le_mur.View.ChannelPage"
              Background="white">
 
@@ -42,6 +43,42 @@
                                             </CarouselView.ItemTemplate>
                                         </CarouselView>
 
+                                        <CarouselView ItemsSource="{Binding Media}" Margin="5,0" Grid.Row="2" HeightRequest="300">
+                                            <CarouselView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame HasShadow="False" Padding="0">
+                                                        <Grid>
+                                                            <extensions:MediaElement Source="{Binding Source}">
+                                                                <extensions:MediaElement.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsLoad}" Value="true" TargetType="extensions:MediaElement">
+                                                                        <Setter Property="IsVisible" Value="true"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding IsLoad}" Value="false" TargetType="extensions:MediaElement">
+                                                                        <Setter Property="IsVisible" Value="false"/>
+                                                                    </DataTrigger>
+                                                                </extensions:MediaElement.Triggers>
+                                                            </extensions:MediaElement>
+                                                            <Frame BackgroundColor="Black" Padding="100">
+                                                                <Image Source="preloader.png">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference messagesList}, Path=BindingContext.LoadVideoCommand}" CommandParameter="{Binding Filename}"/>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                                <Frame.Triggers>
+                                                                    <DataTrigger Binding="{Binding IsLoad}" Value="false" TargetType="Frame">
+                                                                        <Setter Property="IsVisible" Value="true"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding IsLoad}" Value="true" TargetType="Frame">
+                                                                        <Setter Property="IsVisible" Value="false"/>
+                                                                    </DataTrigger>
+                                                                </Frame.Triggers>
+                                                            </Frame>
+                                                        </Grid>
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </CarouselView.ItemTemplate>
+                                        </CarouselView>
+                                        
                                         <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black" Margin="10" HorizontalOptions="End" Grid.Row="3">
                                             <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
                                                 <Image Source="favourites.png" WidthRequest="20">
