@@ -132,7 +132,12 @@ namespace le_mur.NetworkCalling
                             var doc = media.document as Document;
                             if (doc.mime_type.IndexOf("video") > -1)
                             {
-                                res.Last().Media.Add(new VideoInfo(doc.Filename, doc));
+                                var fileName = doc.Filename;
+                                if (fileName == null)
+                                {
+                                    fileName = doc.ID.ToString() + doc.mime_type.Replace("video/", ".");
+                                }
+                                res.Last().Media.Add(new VideoInfo(fileName, doc));
                             }
                             else
                             {
