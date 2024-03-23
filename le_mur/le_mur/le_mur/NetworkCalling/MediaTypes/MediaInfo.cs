@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using TL;
+using Xamarin.CommunityToolkit.Core;
 
 namespace le_mur.NetworkCalling.MediaTypes
 {
@@ -14,12 +15,15 @@ namespace le_mur.NetworkCalling.MediaTypes
         protected string filename;
         protected byte[] data;
         protected Document document;
+        protected MediaSource source;
+        protected bool isLoad;
 
         public MediaInfo(string filename, Document document)
         {
-            this.filename = filename;
-            this.document = document;
+            Filename = filename;
+            Document = document;
         }
+
         public string Filename
         {
             get { return filename; }
@@ -50,6 +54,29 @@ namespace le_mur.NetworkCalling.MediaTypes
             }
         }
 
+        public MediaSource Source
+        {
+            get { return source; }
+            set
+            {
+                if (source != value)
+                {
+                    source = value;
+                    OnPropertyChanged("Source");
+                }
+            }
+        }
+
+        public bool IsLoad
+        {
+            get { return isLoad; }
+            set
+            {
+                isLoad = value;
+                OnPropertyChanged("IsLoad");
+            }
+        }
+
         public async Task<byte[]> GetFile()
         {
             if (data != null)
@@ -58,11 +85,15 @@ namespace le_mur.NetworkCalling.MediaTypes
             if (File.Exists(TelegramApi.filesPath + "/" + filename))
             {
                 data = File.ReadAllBytes(TelegramApi.filesPath + "/" + filename);
+                this.source = TelegramApi.filesPath + "/" + filename;
+                isLoad = true;
                 return data;
             }
 
             data = await TelegramApi.GetDocument(document);
             File.WriteAllBytes(TelegramApi.filesPath + "/" + filename, data);
+            this.source = TelegramApi.filesPath + "/" + filename;
+            isLoad = true;
             return data;
         }
 

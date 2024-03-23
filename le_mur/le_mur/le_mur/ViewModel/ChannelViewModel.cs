@@ -5,6 +5,8 @@ using TL;
 using le_mur.NetworkCalling;
 using System.Collections.Generic;
 using System.Linq;
+using Xamarin.CommunityToolkit.UI.Views;
+using Xamarin.CommunityToolkit.Core;
 
 namespace le_mur.ViewModel
 {
@@ -13,6 +15,7 @@ namespace le_mur.ViewModel
         public INavigation Navigation { get; set; }
 
         public Command FavouritesCommand { get; }
+        public Command LoadVideoCommand { get; }
 
         private ChatInfo selectedChat;
         public ChatInfo SelectedChat
@@ -48,6 +51,7 @@ namespace le_mur.ViewModel
             Messages = new ObservableCollection<MessageInfo>();
 
             FavouritesCommand = new Command(OnFavouritesCommand);
+            LoadVideoCommand = new Command(OnLoadVideoCommand);
 
             GetMessages(0);
         }
@@ -63,6 +67,17 @@ namespace le_mur.ViewModel
         private void OnFavouritesCommand(object obj)
         {
 
+        }
+
+        private async void OnLoadVideoCommand(object obj)
+        {
+            foreach(var mess in Messages)
+                foreach(var media in mess.Media)
+                    if (media.Filename == obj.ToString())
+                    {
+                        await media.GetFile();
+                        return;
+                    }
         }
     }
 }
