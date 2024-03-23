@@ -16,6 +16,7 @@ namespace le_mur.NetworkCalling
         private static WTelegram.Client client;
         private static int apiId = GlobalConsts.apiId;
         private static string apiHash = GlobalConsts.apiHash;
+        public static string filesPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         private static string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments).Replace("files", "session.dat");
         static TelegramApi()
         {
