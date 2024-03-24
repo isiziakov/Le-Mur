@@ -17,7 +17,6 @@ namespace le_mur.Model
     {
         int id;
         string text;
-        List<ImageSource> images;
         List<Photo> imagesLinks;
         ObservableCollection<MediaInfo> media;
         long groupId;
@@ -43,16 +42,6 @@ namespace le_mur.Model
             {
                 text = value;
                 OnPropertyChanged("Text");
-            }
-        }
-
-        public List<ImageSource> Images
-        {
-            get { return images; }
-            set
-            {
-                images = value;
-                OnPropertyChanged("Images");
             }
         }
 
@@ -117,7 +106,6 @@ namespace le_mur.Model
             Id = id;
             Text = text;
             GroupId = groupId;
-            Images = new List<ImageSource>();
             ImagesLinks = new List<Photo>();
             Media = new ObservableCollection<MediaInfo>();
             Height = 0;
@@ -127,7 +115,7 @@ namespace le_mur.Model
 
         public void AddImage(byte[] image)
         {
-            Images.Add(ImageSource.FromStream(() => new MemoryStream(image)));
+            Media.Add(new ImageInfo(ImageSource.FromStream(() => new MemoryStream(image))));
             if (ImageHelper.GetHeightOfImage(image) > Height)
                 Height = ImageHelper.GetHeightOfImage(image);
         }

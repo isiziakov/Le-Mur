@@ -24,6 +24,10 @@ namespace le_mur.NetworkCalling.MediaTypes
             Document = document;
         }
 
+        public MediaInfo()
+        {
+        }
+
         public string Filename
         {
             get { return filename; }
