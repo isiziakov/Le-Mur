@@ -33,5 +33,11 @@ namespace le_mur.View
                 ((ChannelViewModel)BindingContext).GetMessages(((ChannelViewModel)BindingContext).Messages.Last().Id);
             }
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            ((ChannelViewModel)BindingContext).OnLoadVideoCommand(((TappedEventArgs)e).Parameter);
+            ((Image)sender).IsVisible = false;
+        }
     }
 }

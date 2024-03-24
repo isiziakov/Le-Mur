@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using TL;
 using Xamarin.Forms;
+using System.Collections.ObjectModel;
 
 namespace le_mur.Model
 {
@@ -18,7 +19,7 @@ namespace le_mur.Model
         string text;
         List<ImageSource> images;
         List<Photo> imagesLinks;
-        List<MediaInfo> media;
+        ObservableCollection<MediaInfo> media;
         long groupId;
         int height;
         DateTime date;
@@ -65,7 +66,7 @@ namespace le_mur.Model
             }
         }
 
-        public List<MediaInfo> Media
+        public ObservableCollection<MediaInfo> Media
         {
             get { return media; }
             set
@@ -118,7 +119,7 @@ namespace le_mur.Model
             GroupId = groupId;
             Images = new List<ImageSource>();
             ImagesLinks = new List<Photo>();
-            Media = new List<MediaInfo>();
+            Media = new ObservableCollection<MediaInfo>();
             Height = 0;
             Date = date;
             ChatId = chatId;
