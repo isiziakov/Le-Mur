@@ -77,22 +77,31 @@ namespace le_mur.NetworkCalling.MediaTypes
             }
         }
 
+        string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
         public async Task<byte[]> GetFile()
         {
-            if (data != null)
-                return data;
+            //if (data != null)
+            //    return data;
 
             if (File.Exists(TelegramApi.filesPath + "/" + filename))
             {
                 data = File.ReadAllBytes(TelegramApi.filesPath + "/" + filename);
-                this.source = TelegramApi.filesPath + "/" + filename;
+                Source = new FileMediaSource
+                {
+                    File = TelegramApi.filesPath + "/" + filename
+                };
+                //this.source = TelegramApi.filesPath + "/" + filename;
                 isLoad = true;
                 return data;
             }
 
             data = await TelegramApi.GetDocument(document);
             File.WriteAllBytes(TelegramApi.filesPath + "/" + filename, data);
-            this.source = TelegramApi.filesPath + "/" + filename;
+            Source = new FileMediaSource
+            {
+                File = TelegramApi.filesPath + "/" + filename
+            };
+            //this.source = TelegramApi.filesPath + "/" + filename;
             isLoad = true;
             return data;
         }

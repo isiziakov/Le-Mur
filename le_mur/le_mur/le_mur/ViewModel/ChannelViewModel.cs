@@ -69,7 +69,7 @@ namespace le_mur.ViewModel
 
         }
 
-        private async void OnLoadVideoCommand(object obj)
+        public async void OnLoadVideoCommand(object obj)
         {
             foreach(var mess in Messages)
                 foreach(var media in mess.Media)
