@@ -11,7 +11,20 @@ namespace le_mur.NetworkCalling.MediaTypes
 {
     public class ImageInfo : MediaInfo
     {
-        public ImageSource ImageSource;
+        protected ImageSource imageSource;
+
+        public ImageSource ImageSource
+        {
+            get { return imageSource; }
+            set
+            {
+                if (imageSource != value)
+                {
+                    imageSource = value;
+                    OnPropertyChanged("ImageSource");
+                }
+            }
+        }
 
         public ImageInfo(ImageSource imageSource)
         {

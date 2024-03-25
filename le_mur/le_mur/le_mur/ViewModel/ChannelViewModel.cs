@@ -59,6 +59,11 @@ namespace le_mur.ViewModel
         public async void GetMessages(int id)
         {
             var newMessages = await TelegramApi.GetMessages(SelectedChat.Id, id);
+            foreach(var message in newMessages)
+            {
+                if (message.Media.Count > 0 && message.Height == 0)
+                    message.Height = 300;
+            }
             var allMessages = Messages.ToList();
             allMessages.AddRange(newMessages);
             Messages = new ObservableCollection<MessageInfo>(allMessages);
