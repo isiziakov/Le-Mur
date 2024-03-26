@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TL;
 using Xamarin.CommunityToolkit.Core;
+using Xamarin.Forms;
 
 namespace le_mur.NetworkCalling.MediaTypes
 {
@@ -14,6 +15,7 @@ namespace le_mur.NetworkCalling.MediaTypes
     {
         protected string filename;
         protected byte[] data;
+        //protected ImageSource imageSource;
         protected Document document;
         protected MediaSource source;
         protected bool isLoad;

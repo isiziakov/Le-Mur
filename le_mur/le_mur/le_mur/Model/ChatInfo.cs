@@ -15,6 +15,7 @@ namespace le_mur.Model
         InputPeer id;
         string title;
         ImageSource image;
+        bool isShow = true;
 
         public InputPeer Id
         {
@@ -43,6 +44,16 @@ namespace le_mur.Model
             {
                 image = value;
                 OnPropertyChanged("Image");
+            }
+        }
+
+        public bool IsShow
+        {
+            get { return isShow; }
+            set
+            {
+                isShow = value;
+                OnPropertyChanged("IsShow");
             }
         }
 

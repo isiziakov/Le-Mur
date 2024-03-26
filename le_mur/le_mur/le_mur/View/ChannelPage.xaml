@@ -8,7 +8,12 @@
              x:Class="le_mur.View.ChannelPage"
              Background="white">
 
+    <ContentPage.Resources>
+        <local:MediaTypeConverter x:Key="MediaTypeConverter" />
+    </ContentPage.Resources>
+
     <StackLayout>
+        <Label Text="Le Mur" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black" Margin="20,5,20,0" HorizontalOptions="Start" VerticalOptions="Center"/>
         <ListView x:Name="messagesList" ItemsSource="{Binding Messages}" HasUnevenRows="True" SelectionMode="None" Margin="5,5">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -34,33 +39,44 @@
 
                                         <Label TextColor="Black" Text="{Binding Text}" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" Margin="5,0" Grid.Row="1"/>
 
-                                        <CarouselView ItemsSource="{Binding Images}" Margin="5,0" Grid.Row="2" HeightRequest="{Binding Height}">
+                                        <CarouselView ItemsSource="{Binding Media}" Margin="5,0" Grid.Row="2" HeightRequest="{Binding Height}">
                                             <CarouselView.ItemTemplate>
                                                 <DataTemplate>
-                                                    <Frame HasShadow="False" Padding="0">
-                                                        <Image Source="{Binding }" HorizontalOptions="FillAndExpand"/>
-                                                    </Frame>
+                                                    <StackLayout>
+                                                        <Frame HasShadow="False" Padding="0">
+                                                            <Image Source="{Binding ImageSource}" HorizontalOptions="FillAndExpand"/>
+                                                            <Frame.Triggers>
+                                                                <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Image" TargetType="Frame">
+                                                                    <Setter Property="IsVisible" Value="true"/>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Video" TargetType="Frame">
+                                                                    <Setter Property="IsVisible" Value="false"/>
+                                                                </DataTrigger>
+                                                            </Frame.Triggers>
+                                                        </Frame>
+                                                        <Frame HasShadow="False" Padding="0">
+                                                            <Grid>
+                                                                <extensions:MediaElement ShowsPlaybackControls="True" Source="{Binding Source}" HeightRequest="300"/>
+                                                                <Image Source="play.png" HeightRequest="300">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding Filename}"/>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                                <Grid.Triggers>
+                                                                    <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Image" TargetType="Grid">
+                                                                        <Setter Property="IsVisible" Value="false"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Video" TargetType="Grid">
+                                                                        <Setter Property="IsVisible" Value="true"/>
+                                                                    </DataTrigger>
+                                                                </Grid.Triggers>
+                                                            </Grid>
+                                                        </Frame>
+                                                    </StackLayout>
                                                 </DataTemplate>
                                             </CarouselView.ItemTemplate>
                                         </CarouselView>
 
-                                        <CarouselView ItemsSource="{Binding Media, Mode=TwoWay}" Margin="5,0" Grid.Row="2" HeightRequest="300" >
-                                            <CarouselView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Frame HasShadow="False" Padding="0">
-                                                        <Grid>
-                                                            <extensions:MediaElement ShowsPlaybackControls="True" Source="{Binding Source}" HeightRequest="300"/>
-                                                            <Image Source="play.png" HeightRequest="300">
-                                                                <Image.GestureRecognizers>
-                                                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding Filename}"/>
-                                                                </Image.GestureRecognizers>
-                                                            </Image>
-                                                        </Grid>
-                                                    </Frame>
-                                                </DataTemplate>
-                                            </CarouselView.ItemTemplate>
-                                        </CarouselView>
-                                        
                                         <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black" Margin="10" HorizontalOptions="End" Grid.Row="3">
                                             <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
                                                 <Image Source="favourites.png" WidthRequest="20">
