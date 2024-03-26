@@ -43,7 +43,7 @@ namespace le_mur.ViewModel.Auth
                 await Task.Delay(TimeSpan.FromSeconds(3) - elapsedTime);
             switch (status)
             {
-                case AuthStatus.Ok: await Navigation.PushAsync(new ChannelsPage()); break;
+                case AuthStatus.Ok: await Navigation.PushAsync(new FeedPage()); break;
                 case AuthStatus.NeedAuth: await Navigation.PushAsync(new NumberPage()); break;
                 case AuthStatus.NeedCode: await Navigation.PushAsync(new CodePage(PreferencesHelper.GetPhoneNumber())); break;
             }
