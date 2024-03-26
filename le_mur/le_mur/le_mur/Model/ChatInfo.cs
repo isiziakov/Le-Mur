@@ -6,6 +6,7 @@ using System.Text;
 using TL;
 using Xamarin.Forms;
 using le_mur.Helpers;
+using System.IO;
 
 namespace le_mur.Model
 {
@@ -14,6 +15,7 @@ namespace le_mur.Model
         InputPeer id;
         string title;
         ImageSource image;
+        bool isShow = true;
 
         public InputPeer Id
         {
@@ -45,11 +47,25 @@ namespace le_mur.Model
             }
         }
 
-        public ChatInfo(InputPeer id, string title, byte[] image)
+        public bool IsShow
+        {
+            get { return isShow; }
+            set
+            {
+                isShow = value;
+                OnPropertyChanged("IsShow");
+            }
+        }
+
+        public ChatInfo(InputPeer id, string title)
         {
             Id = id;
             Title = title;
-            Image = ImageConverterHelper.ConvertByteArrayToImageSource(image);
+        }
+
+        public void SetImage(byte[] image)
+        {
+            Image = ImageSource.FromStream(() => new MemoryStream(image));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

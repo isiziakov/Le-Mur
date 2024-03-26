@@ -2,12 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             x:Class="le_mur.View.ChanelsPage"
+             x:Class="le_mur.View.ChannelsPage"
              xmlns:vm="clr-namespace:le_mur"
              Background="White">
     
     <StackLayout>
-        <Grid Margin="0,10">
+        <Grid Margin="0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
                 <RowDefinition Height="80"/>
@@ -24,7 +24,7 @@
                 <Frame HasShadow="False" CornerRadius="8" BackgroundColor="White" Padding="10,5">
                     <StackLayout Orientation="Horizontal" VerticalOptions="Center">
                         <Image Source="search.png" WidthRequest="30"/>
-                        <Entry Placeholder="Search" HorizontalOptions="FillAndExpand" Text="{Binding SearchRequest}"/>
+                        <Entry Placeholder="Search" HorizontalOptions="FillAndExpand" Text="{Binding SearchRequest}" PlaceholderColor="Gray" TextColor="Black"/>
                         <Image Source="tools.png" WidthRequest="30">
                             <Image.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ToolsCommand}"/>
@@ -34,7 +34,7 @@
                 </Frame>
             </Frame>
 
-            <Image Source="folder.png" Grid.Column="2" Grid.Row="0" Margin="10" HorizontalOptions="Center">
+            <Image Source="folder.png" Grid.Column="2" Grid.Row="0" Margin="15,0" HorizontalOptions="Center">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding FoldersCommand}"></TapGestureRecognizer>
                 </Image.GestureRecognizers>
@@ -109,7 +109,7 @@
         </Grid>
 
         <ScrollView>
-            <ListView x:Name="channelsList" ItemsSource="{Binding Channels}" HasUnevenRows="True" SelectionMode="None">
+            <ListView x:Name="channelsList" ItemsSource="{Binding Channels}" HasUnevenRows="True" SelectionMode="None" Margin="0,10">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -125,8 +125,29 @@
                                                 </Grid.ColumnDefinitions>
                                                 <CI:CircleImage Source="{Binding Image}" Grid.Column="0"/>
                                                 <Label Margin="15,0" Grid.Column="1" VerticalOptions="Center" Text="{Binding Title}" FontFamily="MontsseratMedium" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
-                                                <Image Source="greenCheck.png" WidthRequest="50" Grid.Column="2"></Image>
+
+                                                <Frame HasShadow="False" CornerRadius="20" Padding="3" BackgroundColor="black" Grid.Column="2">
+                                                    <Frame HasShadow="False" CornerRadius="16" BackgroundColor="White" Padding="5,0">
+                                                        <Image WidthRequest="50">
+                                                            <Image.Triggers>
+                                                                <DataTrigger Binding="{Binding IsShow}" TargetType="Image" Value="true">
+                                                                    <Setter Property="Source" Value="showing.png"/>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding IsShow}" TargetType="Image" Value="false">
+                                                                    <Setter Property="Source" Value="hidden.png"/>
+                                                                </DataTrigger>
+                                                            </Image.Triggers>
+                                                        </Image>
+                                                        <Frame.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding Source={x:Reference channelsList}, Path=BindingContext.StatusChangeCommand}" CommandParameter="{Binding Id}"/>
+                                                        </Frame.GestureRecognizers>
+                                                    </Frame>
+                                                </Frame>
                                             </Grid>
+                                            
+                                            <Frame.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding Source={x:Reference channelsList}, Path=BindingContext.ChatCommand}" CommandParameter="{Binding }"/>
+                                            </Frame.GestureRecognizers>
                                         </Frame>
                                     </Frame>
                                 </StackLayout>

@@ -10,13 +10,13 @@ using Xamarin.Forms.Xaml;
 
 namespace le_mur.View
 {
-    public partial class ChanelsPage : ContentPage
+    public partial class ChannelsPage : ContentPage
     {
-        public ChanelsPage()
+        public ChannelsPage()
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-            this.BindingContext = new ChanelsViewModel() { Navigation = this.Navigation };
+            this.BindingContext = new ChannelsViewModel() { Navigation = this.Navigation };
         }
     }
 }

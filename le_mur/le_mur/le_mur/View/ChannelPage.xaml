@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:CI="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             xmlns:vm="clr-namespace:le_mur" 
+             xmlns:local="clr-namespace:le_mur.View"
+             xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="le_mur.View.ChannelPage"
+             Background="white">
+
+    <ContentPage.Resources>
+        <local:MediaTypeConverter x:Key="MediaTypeConverter" />
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <Label Text="Le Mur" FontFamily="Montsserat" FontAttributes="Bold" FontSize="21" TextColor="Black" Margin="20,5,20,0" HorizontalOptions="Start" VerticalOptions="Center"/>
+        <ListView x:Name="messagesList" ItemsSource="{Binding Messages}" HasUnevenRows="True" SelectionMode="None" Margin="5,5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <Frame HasShadow="False" CornerRadius="5" Padding="2,2,2,10" BackgroundColor="black" Margin="0,0,0,10">
+                                <Frame HasShadow="False" CornerRadius="3" BackgroundColor="White" Padding="0">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <StackLayout Orientation="Horizontal" Padding="5, 5, 5, 5" Grid.Row="0">
+                                            <CI:CircleImage Source="{Binding Source={x:Reference messagesList}, Path=BindingContext.SelectedChat.Image}" WidthRequest="50"/>
+                                            <StackLayout>
+                                                <Label VerticalOptions="Center" Text="{Binding Source={x:Reference messagesList}, Path=BindingContext.SelectedChat.Title}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                                <Label VerticalOptions="Center" Text="{Binding Date}" FontFamily="Montsserat" FontAttributes="Bold" FontSize="12" TextColor="Gray"/>
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <Label TextColor="Black" Text="{Binding Text}" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" Margin="5,0" Grid.Row="1"/>
+
+                                        <CarouselView ItemsSource="{Binding Media}" Margin="5,0" Grid.Row="2" HeightRequest="{Binding Height}">
+                                            <CarouselView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <StackLayout>
+                                                        <Frame HasShadow="False" Padding="0">
+                                                            <Image Source="{Binding ImageSource}" HorizontalOptions="FillAndExpand"/>
+                                                            <Frame.Triggers>
+                                                                <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Image" TargetType="Frame">
+                                                                    <Setter Property="IsVisible" Value="true"/>
+                                                                </DataTrigger>
+                                                                <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Video" TargetType="Frame">
+                                                                    <Setter Property="IsVisible" Value="false"/>
+                                                                </DataTrigger>
+                                                            </Frame.Triggers>
+                                                        </Frame>
+                                                        <Frame HasShadow="False" Padding="0">
+                                                            <Grid>
+                                                                <extensions:MediaElement ShowsPlaybackControls="True" Source="{Binding Source}" HeightRequest="300"/>
+                                                                <Image Source="play.png" HeightRequest="300">
+                                                                    <Image.GestureRecognizers>
+                                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding Filename}"/>
+                                                                    </Image.GestureRecognizers>
+                                                                </Image>
+                                                                <Grid.Triggers>
+                                                                    <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Image" TargetType="Grid">
+                                                                        <Setter Property="IsVisible" Value="false"/>
+                                                                    </DataTrigger>
+                                                                    <DataTrigger Binding="{Binding Converter={StaticResource MediaTypeConverter}, ConverterParameter=$data}" Value="Video" TargetType="Grid">
+                                                                        <Setter Property="IsVisible" Value="true"/>
+                                                                    </DataTrigger>
+                                                                </Grid.Triggers>
+                                                            </Grid>
+                                                        </Frame>
+                                                    </StackLayout>
+                                                </DataTemplate>
+                                            </CarouselView.ItemTemplate>
+                                        </CarouselView>
+
+                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black" Margin="10" HorizontalOptions="End" Grid.Row="3">
+                                            <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
+                                                <Image Source="favourites.png" WidthRequest="20">
+                                                    <Image.GestureRecognizers>
+                                                        <TapGestureRecognizer Command="{Binding Source={x:Reference messagesList}, Path=BindingContext.FavouritesCommand}" CommandParameter="{Binding Id}"/>
+                                                    </Image.GestureRecognizers>
+                                                </Image>
+                                            </Frame>
+                                        </Frame>
+                                        
+                                    </Grid>
+                                </Frame>
+                            </Frame>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>

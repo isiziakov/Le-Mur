@@ -1,5 +1,6 @@
 ﻿using le_mur.Model;
 using le_mur.NetworkCalling;
+using le_mur.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,13 +11,15 @@ using Xamarin.Forms;
 
 namespace le_mur.ViewModel
 {
-    public class ChanelsViewModel : BaseViewModel
+    public class ChannelsViewModel : BaseViewModel
     {
         public INavigation Navigation { get; set; }
 
         public Command ToolsCommand { get; }
         public Command TapCommand { get; }
         public Command FoldersCommand { get; }
+        public Command ChatCommand { get; }
+        public Command StatusChangeCommand { get; }
 
         private ObservableCollection<ChatInfo> channels;
         public ObservableCollection<ChatInfo> Channels
@@ -90,7 +93,7 @@ namespace le_mur.ViewModel
             }
         }
 
-        private string second = "Open";
+        private string second = "Showing";
         public string Second
         {
             get { return second; }
@@ -119,11 +122,14 @@ namespace le_mur.ViewModel
         }
 
         #endregion
-        public ChanelsViewModel() 
+        public ChannelsViewModel() 
         {
             ToolsCommand = new Command(OnToolsCommand);
             TapCommand = new Command(OnTapCommand);
             FoldersCommand = new Command(OnFoldersCommand);
+            ChatCommand = new Command(OnChatCommand);
+            StatusChangeCommand = new Command(OnStatusChangeCommand);
+
             AllChannels = new ObservableCollection<ChatInfo>();
             GetAllChanels();
         }
@@ -173,17 +179,17 @@ namespace le_mur.ViewModel
                 }
             }
             IsOpen = !IsOpen;
-            
+        }
 
-            //switch ((int)parameter)
-            //{
-            //    case 1: 
+        private void OnStatusChangeCommand(object parameter)
+        {
+            var id = (InputPeer)parameter;
+            Channels.Where(x => x.Id == id).First().IsShow = !Channels.Where(x => x.Id == id).First().IsShow;
+        }
 
-            //        break;
-            //    case 2: break;
-            //    case 3: break;
-            //    default: break;
-            //}
+        private async void OnChatCommand(object parameter)
+        {
+            await Navigation.PushAsync(new ChannelPage((ChatInfo)parameter));
         }
     }
 }
