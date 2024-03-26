@@ -193,7 +193,7 @@ namespace le_mur.NetworkCalling
         #endregion
 
         #region GetCustomWall
-        static async Task GetCustomWall(CustomWallInfo wallInfo)
+        static public async Task<CustomWallInfo> GetCustomWall(CustomWallInfo wallInfo)
         {
             wallInfo.Messages.Clear();
             var bufferMessages = new List<MessageInfo>();
@@ -208,11 +208,12 @@ namespace le_mur.NetworkCalling
                 var offset = 0;
                 var msgs = wallInfo.Messages.Where(m => m.ChatId == wallInfo.ChatInfos[i].Item1.Id).ToList();
                 if (msgs.Count > 0)
-                {
+                {   
                     offset = msgs.OrderBy(m => m.Id).Last().Id;
                 }
                 wallInfo.ChatInfos[i] = new Tuple<ChatInfo, int>(wallInfo.ChatInfos[i].Item1, offset);
             }
+            return wallInfo;
         }
         #endregion
 

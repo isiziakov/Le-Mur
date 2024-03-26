@@ -22,6 +22,8 @@ namespace le_mur.Model
         long groupId;
         int height;
         DateTime date;
+        string groupName;
+        ImageSource groupImage;
 
         public InputPeer ChatId;
 
@@ -100,6 +102,25 @@ namespace le_mur.Model
                 OnPropertyChanged("GroupId");
             }
         }
+        public string GroupName
+        {
+            get { return groupName; }
+            set
+            {
+                groupName = value;
+                OnPropertyChanged("GroupName");
+            }
+        }
+
+        public ImageSource GroupImage
+        {
+            get { return groupImage; }
+            set
+            {
+                groupImage = value;
+                OnPropertyChanged("GroupImage");
+            }
+        }
 
         public MessageInfo(int id, string text, long groupId, DateTime date, InputPeer chatId)
         {
@@ -111,6 +132,12 @@ namespace le_mur.Model
             Height = 0;
             Date = date;
             ChatId = chatId;
+        }
+
+        public MessageInfo(int id, string text, long groupId, DateTime date, InputPeer chatId, string groupName, ImageSource groupImage) : this(id, text, groupId, date, chatId)
+        {
+            GroupImage = groupImage;
+            GroupName = groupName;
         }
 
         public void AddImage(byte[] image)
