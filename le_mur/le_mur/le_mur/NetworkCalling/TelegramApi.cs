@@ -197,9 +197,15 @@ namespace le_mur.NetworkCalling
         {
             wallInfo.Messages.Clear();
             var bufferMessages = new List<MessageInfo>();
+            var messagesTasks = new List<Task<List<MessageInfo>>>();
             foreach (var chat in wallInfo.ChatInfos)
             {
                 messagesTasks.Add(GetMessages(chat.Item1.Id, chat.Item2, false));
+            }
+            for (var i = 0; i < messagesTasks.Count; i++)
+            {
+                await messagesTasks[i];
+                bufferMessages.AddRange(messagesTasks[i].Result);
             }
             wallInfo.Messages.AddRange(bufferMessages.OrderByDescending(i => i.Date).ToList().GetRange(0, 100));
             await GetImages(wallInfo.Messages);
