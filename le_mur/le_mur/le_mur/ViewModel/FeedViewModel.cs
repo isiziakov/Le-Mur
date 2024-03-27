@@ -58,7 +58,7 @@ namespace le_mur.ViewModel
             List<MessageInfo> messages = wallInfo.Messages.ToList();
             for (int i = 0; i < messages.Count; i++)
             {
-                if (messages[i].Media.Count > 0 && messages[i].Height == 0)
+                if (messages[i].Video.Count > 0 && messages[i].Height == 0)
                     messages[i].Height = 300;
                 var channel = wallInfo.ChatInfos.Find(x => x.Item1.Id.ID == messages[i].ChatId.ID);
                 messages[i].GroupName = channel.Item1.Title;
@@ -77,7 +77,7 @@ namespace le_mur.ViewModel
         public async void OnLoadVideoCommand(object obj)
         {
             foreach (var mess in Messages)
-                foreach (var media in mess.Media)
+                foreach (var media in mess.Video)
                     if (media.Filename == obj.ToString())
                     {
                         await media.GetFile();

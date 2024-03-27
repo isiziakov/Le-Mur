@@ -18,9 +18,11 @@ namespace le_mur.Model
         int id;
         string text;
         List<Photo> imagesLinks;
-        ObservableCollection<MediaInfo> media;
+        ObservableCollection<VideoInfo> video;
+        ObservableCollection<ImageInfo> images;
         long groupId;
         int height;
+        int heightVideo;
         DateTime date;
         string groupName;
         ImageSource groupImage;
@@ -57,13 +59,23 @@ namespace le_mur.Model
             }
         }
 
-        public ObservableCollection<MediaInfo> Media
+        public ObservableCollection<VideoInfo> Video
         {
-            get { return media; }
+            get { return video; }
             set
             {
-                media = value;
-                OnPropertyChanged("Media");
+                video = value;
+                OnPropertyChanged("Video");
+            }
+        }
+
+        public ObservableCollection<ImageInfo> Images
+        {
+            get { return images; }
+            set
+            {
+                images = value;
+                OnPropertyChanged("Images");
             }
         }
 
@@ -76,6 +88,19 @@ namespace le_mur.Model
                 {
                     height = value;
                     OnPropertyChanged("Height");
+                }
+            }
+        }
+
+        public int HeightVideo
+        {
+            get { return heightVideo; }
+            set
+            {
+                if (heightVideo != value)
+                {
+                    heightVideo = value;
+                    OnPropertyChanged("HeightVideo");
                 }
             }
         }
@@ -128,8 +153,10 @@ namespace le_mur.Model
             Text = text;
             GroupId = groupId;
             ImagesLinks = new List<Photo>();
-            Media = new ObservableCollection<MediaInfo>();
+            Video = new ObservableCollection<VideoInfo>();
+            Images = new ObservableCollection<ImageInfo>();
             Height = 0;
+            HeightVideo = 0;
             Date = date;
             ChatId = chatId;
         }
@@ -142,7 +169,7 @@ namespace le_mur.Model
 
         public void AddImage(byte[] image)
         {
-            Media.Add(new ImageInfo(ImageSource.FromStream(() => new MemoryStream(image))));
+            Images.Add(new ImageInfo(ImageSource.FromStream(() => new MemoryStream(image))));
             if (ImageHelper.GetHeightOfImage(image) > Height)
                 Height = ImageHelper.GetHeightOfImage(image);
         }
