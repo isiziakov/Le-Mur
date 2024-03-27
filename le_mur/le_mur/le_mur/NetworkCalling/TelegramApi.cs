@@ -57,9 +57,7 @@ namespace le_mur.NetworkCalling
             var chats = new List<ChatInfo>();
             var chatsPhoto = new List<IPeerInfo>();
             var res = await client.Messages_GetAllChats();
-            foreach (var chat in res.chats.Where(i => i.Value.IsChannel && i.Value.IsActive 
-            && ((i.Value as Channel).username != null || (i.Value as Channel).usernames != null)
-            && i.Value.Title != "Unsupported Chat").ToList())
+            foreach (var chat in res.chats.Where(i => i.Value.IsChannel && i.Value.IsActive && ((i.Value as Channel).username != null || (i.Value as Channel).usernames != null)).ToList())
             {
                 chats.Add(new ChatInfo(chat.Value, chat.Value.Title));
                 chatsPhoto.Add(chat.Value);
@@ -117,7 +115,7 @@ namespace le_mur.NetworkCalling
                     {
                         res.Add(new MessageInfo(message.ID, message.message, message.grouped_id, message.date, peer));
                     }
-                    
+
                     if (message.media is MessageMediaPhoto)
                     {
                         var media = message.media as MessageMediaPhoto;
@@ -184,7 +182,7 @@ namespace le_mur.NetworkCalling
 
             if (loadImages)
                 await GetImages(res);
-            
+
             return res;
         }
 
@@ -199,16 +197,9 @@ namespace le_mur.NetworkCalling
         {
             wallInfo.Messages.Clear();
             var bufferMessages = new List<MessageInfo>();
-            var messagesTasks = new List<Task<List<MessageInfo>>>();
             foreach (var chat in wallInfo.ChatInfos)
             {
-                messagesTasks.Add(GetMessages(chat.Item1.Id, chat.Item2, false));
                 bufferMessages.AddRange(await GetMessages(chat.Item1.Id, chat.Item2, false));
-            }
-            for (var i = 0; i < messagesTasks.Count; i++)
-            {
-                await messagesTasks[i];
-                bufferMessages.AddRange(messagesTasks[i].Result);
             }
             wallInfo.Messages.AddRange(bufferMessages.OrderByDescending(i => i.Date).ToList().GetRange(0, 100));
             await GetImages(wallInfo.Messages);
@@ -217,7 +208,7 @@ namespace le_mur.NetworkCalling
                 var offset = 0;
                 var msgs = wallInfo.Messages.Where(m => m.ChatId == wallInfo.ChatInfos[i].Item1.Id).ToList();
                 if (msgs.Count > 0)
-                {   
+                {
                     offset = msgs.OrderBy(m => m.Id).Last().Id;
                 }
                 wallInfo.ChatInfos[i] = new Tuple<ChatInfo, int>(wallInfo.ChatInfos[i].Item1, offset);
