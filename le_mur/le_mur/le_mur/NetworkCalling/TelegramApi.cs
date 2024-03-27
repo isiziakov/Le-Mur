@@ -137,11 +137,11 @@ namespace le_mur.NetworkCalling
                                 {
                                     fileName = doc.ID.ToString() + doc.mime_type.Replace("video/", ".");
                                 }
-                                res.Last().Media.Add(new VideoInfo(fileName, doc));
+                                res.Last().Video.Add(new VideoInfo(fileName, doc));
                             }
                             else
                             {
-                                res.Last().Media.Add(new MediaInfo(doc.Filename, doc));
+                                //res.Last().Media.Add(new MediaInfo(doc.Filename, doc));
                             }
                         }
                     }

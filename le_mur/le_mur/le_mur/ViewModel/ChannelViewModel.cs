@@ -61,8 +61,8 @@ namespace le_mur.ViewModel
             var newMessages = await TelegramApi.GetMessages(SelectedChat.Id, id);
             foreach(var message in newMessages)
             {
-                if (message.Media.Count > 0 && message.Height == 0)
-                    message.Height = 300;
+                if (message.Video.Count > 0)
+                    message.HeightVideo = 300;
             }
             var allMessages = Messages.ToList();
             allMessages.AddRange(newMessages);
@@ -77,7 +77,7 @@ namespace le_mur.ViewModel
         public async void OnLoadVideoCommand(object obj)
         {
             foreach(var mess in Messages)
-                foreach(var media in mess.Media)
+                foreach(var media in mess.Video)
                     if (media.Filename == obj.ToString())
                     {
                         await media.GetFile();
