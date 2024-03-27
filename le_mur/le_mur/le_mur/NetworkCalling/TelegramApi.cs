@@ -199,7 +199,7 @@ namespace le_mur.NetworkCalling
             var bufferMessages = new List<MessageInfo>();
             foreach (var chat in wallInfo.ChatInfos)
             {
-                bufferMessages.AddRange(await GetMessages(chat.Item1.Id, chat.Item2, false));
+                messagesTasks.Add(GetMessages(chat.Item1.Id, chat.Item2, false));
             }
             wallInfo.Messages.AddRange(bufferMessages.OrderByDescending(i => i.Date).ToList().GetRange(0, 100));
             await GetImages(wallInfo.Messages);

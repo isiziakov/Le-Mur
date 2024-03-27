@@ -52,7 +52,7 @@ namespace le_mur.ViewModel
         {
             // todo видимые каналы  
             var chats = await TelegramApi.GetChatsInfo();
-            var tmp = new List<ChatInfo> { chats[0], chats[1], chats[2], chats[3], chats[4], chats[5], chats[6], chats[7], chats[8], chats[9] };
+            var tmp = new List<ChatInfo> { chats[0], chats[1], chats[2], chats[3], chats[4], chats[5], chats[6], chats[7], chats[8] };
             var wallInfo = await TelegramApi.GetCustomWall(new CustomWallInfo(tmp));
 
             List<MessageInfo> messages = wallInfo.Messages.ToList();
