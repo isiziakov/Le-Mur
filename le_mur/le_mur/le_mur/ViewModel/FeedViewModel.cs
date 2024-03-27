@@ -58,8 +58,8 @@ namespace le_mur.ViewModel
             List<MessageInfo> messages = wallInfo.Messages.ToList();
             for (int i = 0; i < messages.Count; i++)
             {
-                if (messages[i].Video.Count > 0 && messages[i].Height == 0)
-                    messages[i].Height = 300;
+                if (messages[i].Video.Count > 0)
+                    messages[i].HeightVideo = 300;
                 var channel = wallInfo.ChatInfos.Find(x => x.Item1.Id.ID == messages[i].ChatId.ID);
                 messages[i].GroupName = channel.Item1.Title;
                 messages[i].GroupImage = channel.Item1.Image;
