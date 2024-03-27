@@ -44,7 +44,6 @@
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
                                             <RowDefinition Height="Auto"/>
-                                            <RowDefinition Height="Auto"/>
                                         </Grid.RowDefinitions>
 
                                         <StackLayout Orientation="Horizontal" Padding="5, 5, 5, 5" Grid.Row="0">
@@ -57,26 +56,7 @@
 
                                         <Label TextColor="Black" Text="{Binding Text}" LineBreakMode="WordWrap" HorizontalTextAlignment="Start" Margin="5,0" Grid.Row="1"/>
 
-                                        <CarouselView ItemsSource="{Binding Video}" Margin="5,0" Grid.Row="2" HeightRequest="{Binding HeightVideo}">
-                                            <CarouselView.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackLayout>
-                                                        <Frame HasShadow="False" Padding="0">
-                                                            <Grid>
-                                                                <extensions:MediaElement ShowsPlaybackControls="True" Source="{Binding Source}" HeightRequest="300"/>
-                                                                <Image Source="play.png" HeightRequest="300">
-                                                                    <Image.GestureRecognizers>
-                                                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="{Binding Filename}"/>
-                                                                    </Image.GestureRecognizers>
-                                                                </Image>
-                                                            </Grid>
-                                                        </Frame>
-                                                    </StackLayout>
-                                                </DataTemplate>
-                                            </CarouselView.ItemTemplate>
-                                        </CarouselView>
-
-                                        <CarouselView ItemsSource="{Binding Images}" Margin="5,0" Grid.Row="3" HeightRequest="{Binding Height}">
+                                        <CarouselView ItemsSource="{Binding Images}" Margin="5,0" Grid.Row="2" HeightRequest="{Binding Height}">
                                             <CarouselView.ItemTemplate>
                                                 <DataTemplate>
                                                     <Frame HasShadow="False" Padding="0">
@@ -86,7 +66,7 @@
                                             </CarouselView.ItemTemplate>
                                         </CarouselView>
 
-                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black" Margin="10" HorizontalOptions="End" Grid.Row="4">
+                                        <Frame HasShadow="False" CornerRadius="60" Padding="1" BackgroundColor="black" Margin="10" HorizontalOptions="End" Grid.Row="3">
                                             <Frame HasShadow="False" CornerRadius="60" BackgroundColor="White" Padding="12">
                                                 <Image Source="favourites.png" WidthRequest="20">
                                                     <Image.GestureRecognizers>
