@@ -203,7 +203,6 @@ namespace le_mur.NetworkCalling
             foreach (var chat in wallInfo.ChatInfos)
             {
                 messagesTasks.Add(GetMessages(chat.Item1.Id, chat.Item2, false));
-                bufferMessages.AddRange(await GetMessages(chat.Item1.Id, chat.Item2, false));
             }
             for (var i = 0; i < messagesTasks.Count; i++)
             {
